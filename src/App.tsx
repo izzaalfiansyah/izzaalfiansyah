@@ -16,6 +16,11 @@ const paths = [
     path: "/contact",
   },
   {
+    title: "Career",
+    icon: "mdi mdi-application-brackets-outline",
+    path: "/career",
+  },
+  {
     title: "Project",
     icon: "mdi mdi-book-outline",
     path: "/project",
@@ -123,9 +128,9 @@ const App: Component = () => {
           ></i>
         </button>
       </div>
-      <div class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center font-semibold lg:text-5xl text-3xl bg-white dark:bg-gray-900 z-30 text-blue-500 animate-loading pointer-events-none">
+      {/* <div class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center font-semibold lg:text-5xl text-3xl bg-white dark:bg-gray-900 z-30 text-blue-500 animate-loading pointer-events-none">
         <span class="animate-bounce">Loading...</span>
-      </div>
+      </div> */}
     </div>
   );
 };
