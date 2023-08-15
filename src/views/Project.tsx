@@ -249,7 +249,7 @@ const Project: Component = () => {
             {(item) => (
               <Link
                 href={"/project/" + item.name.toLowerCase().replace(/ /gi, "-")}
-                class="bg-white dark:bg-gray-900 rounded-lg relative shadow overflow-hidden group"
+                class="bg-white dark:bg-gray-900 !bg-opacity-25 backdrop-blur rounded-lg relative shadow overflow-hidden group"
               >
                 <div
                   class="absolute -top-1 right-2 p-1 px-4 text-xs uppercase shadow dark:bg-gray-900 bg-white rounded-b-lg z-[3]"

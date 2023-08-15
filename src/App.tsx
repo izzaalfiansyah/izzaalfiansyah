@@ -110,7 +110,7 @@ const App: Component = () => {
                 alt="My Image"
                 class="w-[100px] h-[100px] rounded-full"
               />
-              <div class="absolute bottom-2.5 right-2.5 bg-green-400 rounded-full p-1.5 border-3 border-white dark:border-gray-900 shadow-sm"></div>
+              <div class="absolute bottom-2 right-2 bg-green-400 rounded-full p-1.5 border-4 border-white dark:border-gray-900 shadow-sm"></div>
             </div>
             <div class="mt-3 text-center">
               <div class="text-primary">Muhammad Izza Alfiansyah</div>

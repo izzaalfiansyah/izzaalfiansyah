@@ -60,7 +60,7 @@ const ProjectDetail: Component = () => {
           </div>
         </section>
         <div class="flex lg:flex-row flex-col gap-4 items-stretch mt-5">
-          <div class="bg-white dark:bg-gray-900 shadow p-5 rounded-lg lg:w-3/5 w-full">
+          <div class="bg-white dark:bg-gray-900 !bg-opacity-25 backdrop-blur shadow p-5 rounded-lg lg:w-3/5 w-full">
             <div class="font-semibold">Description</div>
             <div class="mt-4">{item.description}</div>
 
@@ -74,14 +74,14 @@ const ProjectDetail: Component = () => {
               </a>
             </Show>
           </div>
-          <div class="bg-white dark:bg-gray-900 shadow p-5 rounded-lg w-full lg:flex-1">
-            <div class="font-semibold">Stack</div>
-            <div class="grid grid-cols-4 gap-4">
+          <div class="bg-white dark:bg-gray-900 !bg-opacity-25 backdrop-blur shadow p-5 rounded-lg w-full lg:flex-1">
+            <div class="font-semibold">Stacks</div>
+            <div class="grid grid-cols-4 gap-3">
               <For each={item.language.length ? item.language : []}>
                 {(item) => (
                   <a
                     href={lang[item.toLowerCase() as "svelte"].web}
-                    class="bg-white dark:bg-gray-900 rounded shadow p-1 text-center ml-2 block hover:shadow-primary transition mt-4"
+                    class="bg-white dark:bg-gray-900 !bg-opacity-25 backdrop-blur rounded shadow p-2 text-center block hover:shadow-primary transition mt-4"
                   >
                     <img
                       src={lang[item.toLowerCase() as "svelte"].img}
@@ -106,7 +106,7 @@ const ProjectDetail: Component = () => {
           </Show>
           
         </div> */}
-        <div class="bg-white dark:bg-gray-900 shadow p-5 rounded-lg mt-5 h-80 flex items-center justify-center">
+        <div class="bg-white dark:bg-gray-900 !bg-opacity-25 backdrop-blur shadow p-5 rounded-lg mt-5 h-80 flex items-center justify-center">
           <div class="text-center">
             <div class="lg:text-5xl text-3xl font-semibold">
               Are you interested?
