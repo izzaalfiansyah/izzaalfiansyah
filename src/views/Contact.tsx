@@ -64,7 +64,7 @@ const Contact: Component = () => {
               </div>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d986.9330243867967!2d113.41835782915234!3d-8.329396672666993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1ca3012ac46e0bfa!2zOMKwMTknNDUuOCJTIDExM8KwMjUnMDguMSJF!5e0!3m2!1sen!2sid!4v1649400288617!5m2!1sen!2sid"
-                class="h-300px w-full mt-4 shadow"
+                class="h-[300px] w-full mt-4 shadow"
               ></iframe>
             </div>
           </div>

@@ -40,7 +40,7 @@ const Career: Component = () => {
               <div class="flex md:flex-row flex-col justify-between items-center">
                 <div class="md:w-auto w-full">
                   <img
-                    class="md:w-400px w-full md:mb-0 mb-8 h-40 bg-gray-100 rounded-md object-cover"
+                    class="md:w-[400px] w-full md:mb-0 mb-8 h-40 bg-gray-100 rounded-md object-cover"
                     src={item.image}
                     alt={item.company}
                   />

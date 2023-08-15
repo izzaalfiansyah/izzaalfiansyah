@@ -8,7 +8,7 @@ const Index: Component = () => {
   return (
     <div class="flex flex-wrap flex-col lg:flex-row items-center justify-center lg:justify-between w-full">
       <div class="lg:flex-1 text-center lg:text-left">
-        <div class="lg:text-60px text-35px font-bold">
+        <div class="lg:text-[60px] text-[35px] font-bold">
           {names.map((name) => (
             <div>
               {[...name].map((i) => (
@@ -41,7 +41,7 @@ const Index: Component = () => {
       <div class="order-first lg:order-last">
         <img
           src="/assets/me.png"
-          class="rounded-full lg:w-330px w-200px lg:h-330px h-200px border-8 object-cover border-white dark:border-gray-900 shadow lg:mb-0 mb-14 cursor-pointer transition transform hover:-translate-y-5 mt-5"
+          class="rounded-full lg:w-[330px] w-[200px] lg:h-[330px] h-[200px] border-8 object-cover border-white dark:border-gray-900 shadow lg:mb-0 mb-14 cursor-pointer transition transform hover:-translate-y-5 mt-5"
         />
       </div>
     </div>

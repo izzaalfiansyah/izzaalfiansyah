@@ -84,14 +84,8 @@ const App: Component = () => {
   });
 
   return (
-    <div
-      class="min-h-screen lg:p-3 p-0.5 bg-gradient-to-br from-primary to-blue-500 flex items-stretch"
-      style={{
-        background:
-          'url("https://wallpapers.com/images/hd/real-madrid-1920-x-1080-background-6djzw5gsqk08tp9p.jpg")',
-      }}
-    >
-      <div class="bg-white transition bg-opacity-25 backdrop-blur border-white dark:border-gray-900 border-2 border-opacity-75 text-black dark:(bg-gray-800 bg-opacity-25 text-white) relative rounded-xl overflow-hidden shadow w-full flex items-stretch">
+    <div class="min-h-screen lg:p-3 p-0.5 bg-primary flex items-stretch bg-center bg-fixed bg-cover bg-[url('https://png.pngtree.com/background/20211215/original/pngtree-glassmorphism-background-with-yellow-gradient-and-circle-picture-image_1472033.jpg')]">
+      <div class="bg-white transition bg-opacity-50 dark:bg-opacity-50 backdrop-blur border-white dark:border-gray-900 border-4 text-black dark:bg-gray-800 dark:text-white relative rounded-xl overflow-hidden shadow w-full flex items-stretch">
         <div class="lg:hidden absolute top-0 left-0 right-0 h-20 bg-white dark:bg-gray-900 shadow-sm flex items-center justify-between px-5">
           <button type="button" onClick={toggleSidebar}>
             <i class="mdi mdi-menu text-xl"></i>
@@ -104,17 +98,17 @@ const App: Component = () => {
           ></div>
         </Show>
         <div
-          class="bg-white dark:bg-gray-900 lg:!bg-opacity-25 rounded-r-xl w-80 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
+          class="bg-white dark:bg-gray-900 rounded-r-xl w-80 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
           classList={{
             "!translate-x-0": showSidebar(),
           }}
         >
-          <div class="h-250px flex items-center flex-col justify-center">
+          <div class="h-[250px] flex items-center flex-col justify-center">
             <div class="rounded-full bg-white dark:bg-gray-900 p-1 shadow relative">
               <img
                 src="/assets/me.png"
                 alt="My Image"
-                class="w-100px h-100px rounded-full"
+                class="w-[100px] h-[100px] rounded-full"
               />
               <div class="absolute bottom-2.5 right-2.5 bg-green-400 rounded-full p-1.5 border-3 border-white dark:border-gray-900 shadow-sm"></div>
             </div>
@@ -130,7 +124,7 @@ const App: Component = () => {
                   <Link
                     href={item.path}
                     title={item.title}
-                    class="px-5 text-gray-500 block hover:text-primary rounded-full border border-gray-100 dark:border-gray-700 transform transition hover:-translate-x-1 py-2 flex items-center"
+                    class="px-5 text-gray-700 dark:text-gray-400 font-light block hover:text-primary rounded-full border border-gray-100 dark:border-gray-700 transform transition hover:-translate-x-1 py-2 flex items-center"
                     onClick={toggleSidebar}
                     classList={{
                       "!bg-primary !text-white !dark:text-gray-900 shadow-sm":
@@ -147,7 +141,7 @@ const App: Component = () => {
           <div class="mt-10 flex items-center justify-center">
             <button class="outline-none" onClick={toggleDark}>
               <i
-                class="text-xl mdi text-yellow-500 mdi-weather-night"
+                class="text-xl mdi text-primary mdi-weather-night"
                 classList={{ "mdi-weather-sunny": !darkMode() }}
               ></i>
             </button>

@@ -252,7 +252,7 @@ const Project: Component = () => {
                 class="bg-white dark:bg-gray-900 rounded-lg relative shadow overflow-hidden group"
               >
                 <div
-                  class="absolute -top-1 right-2 p-1 px-2 text-xs uppercase shadow dark:bg-gray-900 bg-white rounded-b-lg z-3"
+                  class="absolute -top-1 right-2 p-1 px-4 text-xs uppercase shadow dark:bg-gray-900 bg-white rounded-b-lg z-[3]"
                   classList={{
                     "text-green-500": item.team,
                     "text-primary": !item.team,
@@ -262,10 +262,10 @@ const Project: Component = () => {
                 </div>
                 <img
                   src={"/assets/project/" + item.photo[0]}
-                  class="lg:h-180px h-150px object-cover w-full transform scale-90 transition rounded group-hover:scale-100"
+                  class="lg:h-[200px] h-[150px] object-cover w-full transform scale-90 transition rounded group-hover:scale-100"
                   alt=""
                 />
-                <div class="absolute top-0 left-0 right-0 bottom-0 bg-white dark:(bg-gray-900) text-primary transition flex opacity-0 group-hover:opacity-100 items-center justify-center rounded z-2 text-2xl uppercase font-semibold transition">
+                <div class="absolute top-0 left-0 right-0 bottom-0 bg-white dark:bg-gray-900 text-primary transition flex opacity-0 group-hover:opacity-100 items-center justify-center rounded z-2 text-2xl uppercase font-semibold transition">
                   <div class="text-center">{item.name}</div>
                 </div>
               </Link>
