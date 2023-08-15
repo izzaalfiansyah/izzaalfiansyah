@@ -1,18 +1,17 @@
-import { defineConfig } from 'vite';
-import solidPlugin from 'vite-plugin-solid';
-import windiPlugin from 'vite-plugin-windicss';
+import { defineConfig } from "vite";
+import solidPlugin from "vite-plugin-solid";
 
 export default defineConfig({
-	plugins: [solidPlugin(), windiPlugin()],
-	server: {
-		port: 3000,
-	},
-	build: {
-		target: 'esnext',
-	},
-	resolve: {
-		alias: {
-			'@/': '/src/',
-		},
-	},
+  plugins: [solidPlugin()],
+  server: {
+    port: 3000,
+  },
+  build: {
+    target: "esnext",
+  },
+  resolve: {
+    alias: {
+      "@/": "/src/",
+    },
+  },
 });

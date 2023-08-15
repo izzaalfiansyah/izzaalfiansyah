@@ -84,8 +84,14 @@ const App: Component = () => {
   });
 
   return (
-    <>
-      <div class="bg-white transition bg-opacity-95 backdrop-blur border-white dark:border-gray-900 border-4 text-black dark:(bg-gray-800 bg-opacity-95 text-white) relative rounded-xl overflow-hidden shadow w-full flex items-stretch">
+    <div
+      class="min-h-screen lg:p-3 p-0.5 bg-gradient-to-br from-primary to-blue-500 flex items-stretch"
+      style={{
+        background:
+          'url("https://wallpapers.com/images/hd/real-madrid-1920-x-1080-background-6djzw5gsqk08tp9p.jpg")',
+      }}
+    >
+      <div class="bg-white transition bg-opacity-25 backdrop-blur border-white dark:border-gray-900 border-2 border-opacity-75 text-black dark:(bg-gray-800 bg-opacity-25 text-white) relative rounded-xl overflow-hidden shadow w-full flex items-stretch">
         <div class="lg:hidden absolute top-0 left-0 right-0 h-20 bg-white dark:bg-gray-900 shadow-sm flex items-center justify-between px-5">
           <button type="button" onClick={toggleSidebar}>
             <i class="mdi mdi-menu text-xl"></i>
@@ -98,7 +104,7 @@ const App: Component = () => {
           ></div>
         </Show>
         <div
-          class="bg-white dark:bg-gray-900 rounded-r-xl w-80 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
+          class="bg-white dark:bg-gray-900 lg:!bg-opacity-25 rounded-r-xl w-80 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
           classList={{
             "!translate-x-0": showSidebar(),
           }}
@@ -200,7 +206,7 @@ const App: Component = () => {
       {/* <div class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center font-semibold lg:text-5xl text-3xl bg-white dark:bg-gray-900 z-30 text-blue-500 animate-loading pointer-events-none">
         <span class="animate-bounce">Loading...</span>
       </div> */}
-    </>
+    </div>
   );
 };
 
