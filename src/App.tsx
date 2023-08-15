@@ -84,12 +84,12 @@ const App: Component = () => {
   });
 
   return (
-    <div class="dark">
+    <div class="">
       <div
-        class="h-screen lg:p-4 p-0.5 bg-primary flex items-stretch"
+        class="h-screen lg:p-3 p-0.5 bg-primary flex items-stretch"
         style={{ "background-image": "" }}
       >
-        <div class="bg-white bg-opacity-90 backdrop-blur border-white dark:border-gray-900 border-2 text-black dark:(bg-gray-800 bg-opacity-90 text-white) relative rounded-xl overflow-hidden shadow w-full flex items-stretch">
+        <div class="bg-white bg-opacity-90 backdrop-blur border-white dark:border-gray-900 border-4 text-black dark:(bg-gray-800 bg-opacity-90 text-white) relative rounded-xl overflow-hidden shadow w-full flex items-stretch">
           <div class="lg:hidden absolute top-0 left-0 right-0 h-20 bg-white dark:bg-gray-900 shadow-sm flex items-center justify-between px-5">
             <button type="button" onClick={toggleSidebar}>
               <i class="mdi mdi-menu text-xl"></i>
