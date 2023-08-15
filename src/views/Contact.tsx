@@ -46,7 +46,7 @@ const Contact: Component = () => {
                 <a
                   target="_blank"
                   href={item.link}
-                  class="bg-white dark:bg-gray-900 rounded mb-3 shadow p-4 flex transition hover:(transform scale-103)"
+                  class="bg-white dark:bg-gray-900 rounded-lg mb-3 shadow p-4 flex transition hover:(transform scale-103)"
                 >
                   <div class="w-40px pr-3 text-center">
                     <i class={"mdi mdi-" + item.icon}></i>
@@ -57,7 +57,7 @@ const Contact: Component = () => {
             </For>
           </div>
           <div class="lg:w-3/5 w-full">
-            <div class="bg-white dark:bg-gray-900 shadow p-4 rounded">
+            <div class="bg-white dark:bg-gray-900 shadow p-4 rounded-lg">
               <div class="text-center">
                 Dusun Karanganyar RT002/RW008, Desa Karangrejo, Kecamatan
                 Gumukmas, Kabupaten Jember

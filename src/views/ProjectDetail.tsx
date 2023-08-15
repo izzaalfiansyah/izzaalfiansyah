@@ -51,7 +51,7 @@ const ProjectDetail: Component = () => {
                   <li class="splide__slide">
                     <img
                       src={"/assets/project/" + p}
-                      class="rounded shadow object-cover"
+                      class="rounded-lg shadow object-cover"
                     />
                   </li>
                 )}

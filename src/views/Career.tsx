@@ -36,7 +36,7 @@ const Career: Component = () => {
         <Title title="Career" subtitle="The amazing of my experience" />
         <div class="w-full">
           {data.map((item) => (
-            <div class="bg-white dark:bg-gray-900 rounded shadow p-4 mb-4 transition hover:(transform scale-105) mb-3">
+            <div class="bg-white dark:bg-gray-900 rounded-lg shadow p-4 mb-4 transition hover:(transform scale-105) mb-3">
               <div class="flex md:flex-row flex-col justify-between items-center">
                 <div class="md:w-auto w-full">
                   <img
