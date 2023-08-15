@@ -5,7 +5,7 @@ import { Component, For } from "solid-js";
 export const project = [
   {
     name: "Arsogi Group",
-    description: "Arsogi Group",
+    description: "Aplikasi katalog produk dan transaksi jual beli",
     link: "http://arsogigrup.com",
     team: false,
     language: ["Laravel", "Svelte"],
