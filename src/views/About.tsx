@@ -78,7 +78,7 @@ const About: Component = () => {
           subtitle="A short piece about my personal background"
         />
         <div class="w-full">
-          <div class="backdrop-blur rounded-lg shadow-sm bg-white bg-opacity-25 dark:bg-gray-900 dark:bg-opacity-25 p-4 mb-4 transition hover:scale-105">
+          <div class="rounded-lg shadow-sm bg-white dark:bg-gray-900 !bg-opacity-30 p-4 mb-4 transition hover:scale-[103%]">
             <p class="mb-4">
               Hello! My Name is Muhammad Izza Alfiansyah and you can call me
               Alfian. I Live in Jember Regency, East Java, Indonesia. I started
@@ -105,7 +105,7 @@ const About: Component = () => {
               .
             </p>
           </div>
-          <div class="p-4 shadow-sm bg-white bg-opacity-25 dark:bg-gray-900 dark:bg-opacity-25 backdrop-blur rounded-lg mb-4 transition hover:scale-105">
+          <div class="p-4 shadow-sm bg-white dark:bg-gray-900 !bg-opacity-30 rounded-lg mb-4 transition hover:scale-[103%]">
             Some of my skills are:
             <div class="grid lg:grid-cols-8 grid-cols-4 my-10 lg:gap-8 gap-4 mx-5 justify-center items-center">
               <For each={skills}>

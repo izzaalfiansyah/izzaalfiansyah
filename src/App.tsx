@@ -86,7 +86,7 @@ const App: Component = () => {
   return (
     <div class="min-h-screen lg:p-3 p-0.5 bg-primary flex items-stretch bg-center bg-fixed bg-cover bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIZ485eueXmsPR6z4HhzXF1Fl7NoQhv3kLyA&usqp=CAU')] dark:bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC-h9ytvbqRrKymPrUc7GeDcErNlVYE_lq9odW2oXmxfeT3sM6yNToxVn9s8-iEcHiF1w&usqp=CAU')] transition">
       <div class="bg-white transition bg-opacity-25 dark:bg-opacity-25 backdrop-blur border-white dark:border-gray-900 border-2 !border-opacity-25 text-black dark:bg-gray-800 dark:text-white relative rounded-xl overflow-hidden shadow w-full flex items-stretch">
-        <div class="lg:hidden absolute top-0 left-0 right-0 h-20 bg-white dark:bg-gray-900 !bg-opacity-25 backdrop-blur shadow-sm flex items-center justify-between px-5">
+        <div class="lg:hidden absolute top-0 left-0 right-0 h-20 bg-white dark:bg-gray-900 !bg-opacity-25 shadow-sm flex items-center justify-between px-5">
           <button type="button" onClick={toggleSidebar}>
             <i class="mdi mdi-menu text-xl"></i>
           </button>
@@ -98,13 +98,13 @@ const App: Component = () => {
           ></div>
         </Show>
         <div
-          class="bg-white dark:bg-gray-900 lg:!bg-opacity-50 bg-opacity-100 backdrop-blur rounded-r-xl w-80 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
+          class="bg-white dark:bg-gray-900 lg:!bg-opacity-50 bg-opacity-100 rounded-r-xl w-80 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
           classList={{
             "!translate-x-0": showSidebar(),
           }}
         >
           <div class="h-[250px] flex items-center flex-col justify-center">
-            <div class="rounded-full bg-opacity-25 backdrop-blur p-1 shadow relative">
+            <div class="rounded-full bg-opacity-25 p-1 shadow relative">
               <img
                 src="/assets/me.png"
                 alt="My Image"
@@ -124,10 +124,10 @@ const App: Component = () => {
                   <Link
                     href={item.path}
                     title={item.title}
-                    class="px-5 text-gray-700 dark:text-gray-400 font-light block hover:text-primary rounded-full border border-gray-200 dark:border-gray-700 transform transition hover:-translate-x-1 py-2 flex items-center outline-none"
+                    class="px-5 text-gray-700 dark:text-gray-400 font-light block hover:text-primary rounded-full !bg-opacity-50 bg-white dark:bg-gray-900 transform transition hover:-translate-x-1 py-2 flex items-center outline-none shadow-sm"
                     onClick={toggleSidebar}
                     classList={{
-                      "!bg-primary !text-white !dark:text-gray-900 shadow-sm":
+                      "!bg-primary !bg-opacity-100 !text-white !dark:text-gray-900":
                         location.pathname == item.path,
                     }}
                   >
