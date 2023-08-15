@@ -86,7 +86,7 @@ const App: Component = () => {
   return (
     <div class="min-h-screen lg:p-3 p-0.5 bg-primary flex items-stretch bg-center bg-fixed bg-cover bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIZ485eueXmsPR6z4HhzXF1Fl7NoQhv3kLyA&usqp=CAU')] dark:bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC-h9ytvbqRrKymPrUc7GeDcErNlVYE_lq9odW2oXmxfeT3sM6yNToxVn9s8-iEcHiF1w&usqp=CAU')] transition">
       <div class="bg-white transition bg-opacity-25 dark:bg-opacity-25 backdrop-blur border-white dark:border-gray-900 border-2 !border-opacity-25 text-black dark:bg-gray-800 dark:text-white relative rounded-xl overflow-hidden shadow w-full flex items-stretch">
-        <div class="lg:hidden absolute top-0 left-0 right-0 h-20 bg-white dark:bg-gray-900 shadow-sm flex items-center justify-between px-5">
+        <div class="lg:hidden absolute top-0 left-0 right-0 h-20 bg-white dark:bg-gray-900 !bg-opacity-25 backdrop-blur shadow-sm flex items-center justify-between px-5">
           <button type="button" onClick={toggleSidebar}>
             <i class="mdi mdi-menu text-xl"></i>
           </button>
@@ -98,7 +98,7 @@ const App: Component = () => {
           ></div>
         </Show>
         <div
-          class="bg-white dark:bg-gray-900 !bg-opacity-50 backdrop-blur rounded-r-xl w-80 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
+          class="bg-white dark:bg-gray-900 lg:bg-opacity-50 bg-opacity-100 backdrop-blur rounded-r-xl w-80 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
           classList={{
             "!translate-x-0": showSidebar(),
           }}
@@ -147,7 +147,7 @@ const App: Component = () => {
             </button>
           </div>
         </div>
-        <div class="lg:ml-80 lg:mt-0 mt-20 py-10 lg:px-10 lg:p-5 p-2.5 flex items-stretch w-full overflow-y-scroll">
+        <div class="lg:ml-80 lg:mt-0 mt-20 py-10 lg:px-10 p-2.5 flex items-stretch w-full">
           <Router />
         </div>
         {/* <div class="nav h-15 px-6 flex z-20 flex-row items-center bg-white dark:bg-gray-900 shadow lg:(absolute left-0 bottom-0 top-0 w-72 h-screen flex-col py-10 justify-between) transition relative rounded-xl">
