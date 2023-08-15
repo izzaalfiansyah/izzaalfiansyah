@@ -12,12 +12,20 @@ const Career: Component = () => {
       company: "Mascitra.com",
       position: "Leader Junior Full Stack Developer",
       date: "Dec 2019 - Apr 2020",
-      image: "https://mascitra.com/uploads/portofolio/157/full/_K8C1203.jpg",
+      image:
+        "https://media.licdn.com/dms/image/C560BAQEm7dlvSIrp6Q/company-logo_200_200/0/1622715903607?e=2147483647&v=beta&t=5Y064WlK7ncmZNqF3O6Uno2rAklIz1QnVHVRw6maZPU",
+    },
+    {
+      company: "Fopegram Developer",
+      position: "Back End Developer",
+      date: "Oct 2020 - Agu 2022",
+      image:
+        "https://png.pngtree.com/png-clipart/20221110/original/pngtree-f-logo-business-symbols-vector-template-letter-picture-image_3626283.png",
     },
     {
       company: "Freelance",
       position: "Full Stack Developer",
-      date: "Oct 2020 - Now",
+      date: "Mar 2022 - Now",
       image: "https://miro.medium.com/max/1200/1*BBct14l3of-42X9TjH65QA.png",
     },
   ];
@@ -32,7 +40,7 @@ const Career: Component = () => {
               <div class="flex md:flex-row flex-col justify-between items-center">
                 <div class="md:w-auto w-full">
                   <img
-                    class="md:w-400px w-full md:mb-0 mb-8 h-180px bg-gray-100 rounded-md object-cover"
+                    class="md:w-400px w-full md:mb-0 mb-8 h-40 bg-gray-100 rounded-md object-cover"
                     src={item.image}
                     alt={item.company}
                   />

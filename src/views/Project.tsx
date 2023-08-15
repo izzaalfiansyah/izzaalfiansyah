@@ -244,7 +244,7 @@ const Project: Component = () => {
           title="Project"
           subtitle="Collection of works of achievements that I made individually or in groups"
         />
-        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 w-full">
+        <div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4 w-full">
           <For each={project}>
             {(item) => (
               <Link
