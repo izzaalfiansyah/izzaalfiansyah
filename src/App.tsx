@@ -94,11 +94,11 @@ const App: Component = () => {
         <Show when={showSidebar()}>
           <div
             onClick={toggleSidebar}
-            class="lg:hidden fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-25 z-49"
+            class="lg:hidden fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 z-49"
           ></div>
         </Show>
         <div
-          class="bg-white dark:bg-gray-900 lg:bg-opacity-50 bg-opacity-100 backdrop-blur rounded-r-xl w-80 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
+          class="bg-white dark:bg-gray-900 lg:!bg-opacity-50 bg-opacity-100 backdrop-blur rounded-r-xl w-80 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
           classList={{
             "!translate-x-0": showSidebar(),
           }}
