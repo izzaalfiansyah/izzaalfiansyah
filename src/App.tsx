@@ -86,7 +86,7 @@ const App: Component = () => {
   return (
     <div class="">
       <div
-        class="min-h-screen lg:p-3 p-0.5 bg-primary flex items-stretch"
+        class="h-screen lg:p-3 p-0.5 bg-primary flex items-stretch"
         style={{ "background-image": "" }}
       >
         <div class="bg-white transition bg-opacity-95 backdrop-blur border-white dark:border-gray-900 border-4 text-black dark:(bg-gray-800 bg-opacity-95 text-white) relative lg:rounded-xl rounded overflow-hidden shadow w-full flex items-stretch">
@@ -142,6 +142,14 @@ const App: Component = () => {
                 )}
               </For>
             </ul>
+            <div class="mt-10 flex items-center justify-center">
+              <button class="outline-none" onClick={toggleDark}>
+                <i
+                  class="text-xl mdi text-yellow-500 mdi-weather-night"
+                  classList={{ "mdi-weather-sunny": !darkMode() }}
+                ></i>
+              </button>
+            </div>
           </div>
           <div class="lg:ml-80 lg:mt-0 mt-20 py-10 lg:px-10 lg:p-5 p-2.5 flex items-stretch w-full overflow-y-scroll">
             <Router />
