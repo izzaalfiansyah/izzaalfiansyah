@@ -85,7 +85,7 @@ const App: Component = () => {
 
   return (
     <div class="min-h-screen lg:p-5 p-2.5 bg-gradient-to-br from-gray-100 to-blue-100 flex items-stretch">
-      <div class="bg-gray-50 text-black dark:(bg-gray-800 text-white) relative rounded-xl overflow-hidden shadow w-full flex items-stretch">
+      <div class="bg-white bg-opacity-70 backdrop-blur border-white border-2 text-black dark:(bg-gray-800 text-white) relative rounded-xl overflow-hidden shadow w-full flex items-stretch">
         <div class="lg:hidden absolute top-0 left-0 right-0 h-20 bg-white shadow-sm flex items-center justify-between px-5">
           <button type="button" onClick={toggleSidebar}>
             <i class="mdi mdi-menu text-xl"></i>
