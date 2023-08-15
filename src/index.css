@@ -1,26 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;800&display=swap");
 
 * {
-	scroll-behavior: smooth;
-	font-family: 'Handlee', cursive, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  scroll-behavior: smooth;
+  font-family: "Inter", cursive, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
 }
 
 body {
-	margin: 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	@apply overflow-x-hidden overflow-y-scroll;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply overflow-x-hidden overflow-y-scroll;
 }
 
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 ::-webkit-scrollbar {
-	@apply w-1.5 h-1.5 bg-white dark:bg-gray-900;
+  @apply w-1.5 h-1.5 bg-white dark:bg-gray-900;
 }
 
 ::-webkit-scrollbar-thumb {
-	@apply rounded-full bg-blue-500;
+  @apply rounded-full bg-blue-500;
 }

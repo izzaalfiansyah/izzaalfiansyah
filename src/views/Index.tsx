@@ -6,9 +6,9 @@ const Index: Component = () => {
   const names = ["Muhammad Izza", "Alfiansyah"];
 
   return (
-    <div class="flex flex-wrap flex-col lg:flex-row items-center lg:h-100vh">
-      <div class="lg:flex-1 text-center">
-        <div class="text-center lg:text-70px text-38px font-bold">
+    <div class="flex flex-wrap flex-col lg:flex-row items-center justify-center lg:justify-between lg:px-10 w-full">
+      <div class="lg:flex-1 text-center lg:text-left">
+        <div class="lg:text-60px text-35px font-bold">
           {names.map((name) => (
             <div>
               {[...name].map((i) => (
@@ -22,32 +22,27 @@ const Index: Component = () => {
             </div>
           ))}
         </div>
-        <div class="lg:my-8 my-4 font-semibold text-gray-500">
-          FULL STACK <span class="text-blue-500">DEVELOPER</span>
-        </div>
-        <div class="text-center">
+        <div class="flex gap-x-4 mt-10">
           <a
             href={CV}
             target="_blank"
-            class="bg-white dark:bg-gray-900 shadow text-blue-500 uppercase rounded px-4 p-2 font-semibold m-2 text-sm inline-block transform transition hover:scale-110"
+            class="bg-white dark:bg-gray-900 shadow text-blue-500 uppercase rounded-full px-8 p-3 text-sm inline-block transform transition hover:scale-110"
           >
             DOWNLOAD CV
           </a>
           <Link
             href="/about"
-            class="bg-blue-500 shadow text-white uppercase rounded px-4 p-2 font-semibold m-2 text-sm inline-block transform transition hover:scale-110"
+            class="bg-blue-500 shadow text-white uppercase rounded-full px-8 p-3 text-sm inline-block transform transition hover:scale-110"
           >
             ABOUT ME
           </Link>
         </div>
       </div>
-      <div class="lg:flex-1 order-first lg:order-last">
-        <div class="flex justify-center">
-          <img
-            src="/assets/me.png"
-            class="rounded-full lg:w-350px w-200px lg:h-350px h-200px p-2 border-4 object-cover border-blue-500 lg:mb-0 mb-14 cursor-pointer transition transform hover:-translate-y-5 mt-5"
-          />
-        </div>
+      <div class="order-first lg:order-last">
+        <img
+          src="/assets/me.png"
+          class="rounded-full lg:w-330px w-200px lg:h-330px h-200px border-8 object-cover border-white shadow lg:mb-0 mb-14 cursor-pointer transition transform hover:-translate-y-5 mt-5"
+        />
       </div>
     </div>
   );

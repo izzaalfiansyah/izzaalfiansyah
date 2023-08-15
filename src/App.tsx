@@ -1,34 +1,34 @@
 import { Link, useLocation } from "@solidjs/router";
-import { Component, createSignal, For, onMount } from "solid-js";
+import { Component, createSignal, For, onMount, Show } from "solid-js";
 import MyAudio from "@/assets/Serenity.mp3";
 import "@/App.css";
 import Router from "./Router";
 
 const paths = [
   {
-    title: "Profile",
-    icon: "mdi mdi-account-settings-outline",
+    title: "Home",
+    icon: "mdi mdi-home-outline",
     path: "/",
+  },
+  {
+    title: "About",
+    icon: "mdi mdi-account-settings-outline",
+    path: "/about",
+  },
+  {
+    title: "Career",
+    icon: "mdi mdi-chart-timeline-variant",
+    path: "/career",
+  },
+  {
+    title: "Project",
+    icon: "mdi mdi-chart-line",
+    path: "/project",
   },
   {
     title: "Contact",
     icon: "mdi mdi-phone-outline",
     path: "/contact",
-  },
-  {
-    title: "Career",
-    icon: "mdi mdi-application-brackets-outline",
-    path: "/career",
-  },
-  {
-    title: "Project",
-    icon: "mdi mdi-book-outline",
-    path: "/project",
-  },
-  {
-    title: "About",
-    icon: "mdi mdi-view-gallery-outline",
-    path: "/about",
   },
 ];
 
@@ -37,6 +37,7 @@ const App: Component = () => {
   const [audio, setAudio] = createSignal<HTMLAudioElement>(
     document.createElement("audio")
   );
+  const [showSidebar, setShowSidebar] = createSignal(false);
   const [audioPlaying, setAudioPlaying] = createSignal<boolean>(false);
   const [darkMode, setDarkMode] = createSignal<boolean>(false);
 
@@ -69,6 +70,10 @@ const App: Component = () => {
     darkInit();
   }
 
+  const toggleSidebar = () => {
+    setShowSidebar(!showSidebar());
+  };
+
   onMount(() => {
     const music = document.createElement("audio");
     music.src = MyAudio;
@@ -79,9 +84,65 @@ const App: Component = () => {
   });
 
   return (
-    <div>
-      <div class="min-h-screen bg-gray-50 text-black dark:(bg-gray-800 text-white)">
-        <div class="nav h-15 px-6 flex z-20 flex-row items-center bg-white dark:bg-gray-900 shadow lg:(fixed left-0 bottom-0 top-0 w-18 h-screen flex-col py-10 justify-between) transition relative">
+    <div class="min-h-screen lg:p-5 p-2.5 bg-gradient-to-br from-gray-100 to-blue-100 flex items-stretch">
+      <div class="bg-gray-50 text-black dark:(bg-gray-800 text-white) relative rounded-xl overflow-hidden shadow w-full flex items-stretch">
+        <div class="lg:hidden absolute top-0 left-0 right-0 h-20 bg-white shadow-sm flex items-center justify-between px-5">
+          <button type="button" onClick={toggleSidebar}>
+            <i class="mdi mdi-menu text-xl"></i>
+          </button>
+        </div>
+        <Show when={showSidebar()}>
+          <div
+            onClick={toggleSidebar}
+            class="lg:hidden fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-25 z-49"
+          ></div>
+        </Show>
+        <div
+          class="bg-white rounded-xl w-72 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
+          classList={{
+            "!translate-x-0": showSidebar(),
+          }}
+        >
+          <div class="h-250px flex items-center flex-col justify-center">
+            <div class="rounded-full bg-white p-1 shadow relative">
+              <img
+                src="/assets/me.png"
+                alt="My Image"
+                class="w-100px h-100px rounded-full"
+              />
+              <div class="absolute bottom-2.5 right-2.5 bg-green-400 rounded-full p-1.5 border-3 border-white shadow-sm"></div>
+            </div>
+            <div class="mt-3 text-center">
+              <div class="tex-sm">Muhammad Izza Alfiansyah</div>
+              <div class="font-light text-xs">Full Stack Developer</div>
+            </div>
+          </div>
+          <ul class="px-5">
+            <For each={paths}>
+              {(item) => (
+                <li class="mb-2">
+                  <Link
+                    href={item.path}
+                    title={item.title}
+                    class="px-5 text-gray-600 block hover:text-blue-500 rounded-full border border-gray-100 transform transition hover:-translate-x-1 py-2 flex items-center"
+                    onClick={toggleSidebar}
+                    classList={{
+                      "!bg-blue-500 !text-white shadow-sm":
+                        location.pathname == item.path,
+                    }}
+                  >
+                    <i class={"mdi text-lg mr-3 " + item.icon}></i>
+                    {item.title}
+                  </Link>
+                </li>
+              )}
+            </For>
+          </ul>
+        </div>
+        <div class="lg:ml-72 lg:mt-0 mt-20 p-5 flex items-stretch w-full">
+          <Router />
+        </div>
+        {/* <div class="nav h-15 px-6 flex z-20 flex-row items-center bg-white dark:bg-gray-900 shadow lg:(absolute left-0 bottom-0 top-0 w-72 h-screen flex-col py-10 justify-between) transition relative rounded-xl">
           <div class="flex-1">
             <Link
               href="/"
@@ -114,12 +175,12 @@ const App: Component = () => {
               ></i>
             </button>
           </div>
-        </div>
-        <div class="px-4 pb-16 py-10 lg:(ml-18 py-0 pb-0) lg:min-h-screen view">
+        </div> */}
+        {/* <div class="px-4 pb-16 py-10 lg:(ml-18 py-0 pb-0) lg:min-h-screen view">
           <Router></Router>
-        </div>
+        </div> */}
         <button
-          class="outline-none fixed lg:top-10 top-20 right-5 w-10 z-10 h-10 flex items-center justify-center rounded-full transition bg-purple-500 shadow-lg"
+          class="outline-none absolute top-5 right-5 w-10 z-10 h-10 flex items-center justify-center rounded-full transition bg-purple-500 shadow-lg"
           onClick={handleMusic}
         >
           <i
