@@ -34,6 +34,7 @@ const Career: Component = () => {
                   <img
                     class="md:w-400px w-full md:mb-0 mb-8 h-180px bg-gray-100 rounded-md object-cover"
                     src={item.image}
+                    alt={item.company}
                   />
                 </div>
                 <div class="md:pl-5 w-full">
