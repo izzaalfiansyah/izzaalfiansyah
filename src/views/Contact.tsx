@@ -1,3 +1,4 @@
+import Title from "@/components/title/title";
 import { Component, For } from "solid-js";
 
 export const social_media = [
@@ -36,13 +37,10 @@ export const social_media = [
 const Contact: Component = () => {
   return (
     <>
-      <div class="lg:min-h-100vh flex flex-wrap -mx-4 lg:py-10">
-        <div class="w-full text-center mb-5 mt-5 px-4">
-          <div class="text-blue-500 font-bold text-3xl">CONTACT</div>
-          <div>The places where you can find me</div>
-        </div>
+      <div class="w-full">
+        <Title title="Contact" subtitle="The places when you can find me" />
         <div class="flex w-full flex-wrap">
-          <div class="lg:w-1/2 w-full p-4">
+          <div class="lg:w-2/5 w-full lg:pr-4">
             <For each={social_media}>
               {(item) => (
                 <a
@@ -58,7 +56,7 @@ const Contact: Component = () => {
               )}
             </For>
           </div>
-          <div class="lg:w-1/2 w-full p-4">
+          <div class="lg:w-3/5 w-full">
             <div class="bg-white dark:bg-gray-900 shadow p-4 rounded">
               <div class="text-center">
                 Dusun Karanganyar RT002/RW008, Desa Karangrejo, Kecamatan
