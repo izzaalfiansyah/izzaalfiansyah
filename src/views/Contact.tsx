@@ -38,7 +38,7 @@ const Contact: Component = () => {
   return (
     <>
       <div class="w-full">
-        <Title title="Contact" subtitle="The places when you can find me" />
+        <Title title="Contact" subtitle="The places where you can find me" />
         <div class="flex w-full flex-wrap">
           <div class="lg:w-2/5 w-full lg:pr-4">
             <For each={social_media}>
