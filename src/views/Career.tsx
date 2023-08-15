@@ -16,7 +16,7 @@ const Career: Component = () => {
         "https://media.licdn.com/dms/image/C560BAQEm7dlvSIrp6Q/company-logo_200_200/0/1622715903607?e=2147483647&v=beta&t=5Y064WlK7ncmZNqF3O6Uno2rAklIz1QnVHVRw6maZPU",
     },
     {
-      company: "Fopegram Developer",
+      company: "Fopegram",
       position: "Back End Developer",
       date: "Oct 2020 - Agu 2022",
       image:
@@ -36,7 +36,7 @@ const Career: Component = () => {
         <Title title="Career" subtitle="The amazing of my experience" />
         <div class="w-full">
           {data.map((item) => (
-            <div class="bg-white !bg-opacity-25 backdrop-blur dark:bg-gray-900 rounded-lg shadow p-4 mb-4 transition transform hover:scale-105 mb-3">
+            <div class="bg-white !bg-opacity-25 dark:bg-gray-900 rounded-lg shadow backdrop-blur p-3 mb-4 transition transform hover:scale-105 mb-3">
               <div class="flex md:flex-row flex-col justify-between items-center">
                 <div class="md:w-auto w-full">
                   <img

@@ -46,7 +46,7 @@ const Contact: Component = () => {
                 <a
                   target="_blank"
                   href={item.link}
-                  class="bg-white dark:bg-gray-900 !bg-opacity-25 backdrop-blur rounded-lg mb-3 shadow p-4 flex transition hover:(transform scale-103)"
+                  class="bg-white dark:bg-gray-900 !bg-opacity-25 backdrop-blur rounded-lg mb-3 shadow p-4 flex transition hover:scale-[103%]"
                 >
                   <div class="w-40px pr-3 text-center">
                     <i class={"mdi mdi-" + item.icon}></i>

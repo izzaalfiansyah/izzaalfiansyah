@@ -124,7 +124,7 @@ const App: Component = () => {
                   <Link
                     href={item.path}
                     title={item.title}
-                    class="px-5 text-gray-700 dark:text-gray-400 font-light block hover:text-primary rounded-full border border-gray-200 dark:border-gray-700 transform transition hover:-translate-x-1 py-2 flex items-center"
+                    class="px-5 text-gray-700 dark:text-gray-400 font-light block hover:text-primary rounded-full border border-gray-200 dark:border-gray-700 transform transition hover:-translate-x-1 py-2 flex items-center outline-none"
                     onClick={toggleSidebar}
                     classList={{
                       "!bg-primary !text-white !dark:text-gray-900 shadow-sm":
