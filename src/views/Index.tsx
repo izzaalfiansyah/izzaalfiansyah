@@ -8,7 +8,10 @@ const Index: Component = () => {
   return (
     <div class="flex flex-wrap flex-col lg:flex-row items-center justify-center lg:justify-between w-full">
       <div class="lg:flex-1 text-center lg:text-left">
-        <div class="lg:text-[60px] text-[35px] font-bold">
+        <div
+          class="lg:text-[60px] text-[35px] font-bold"
+          style={{ "line-height": "1" }}
+        >
           {names.map((name) => (
             <div>
               {[...name].map((i) => (
