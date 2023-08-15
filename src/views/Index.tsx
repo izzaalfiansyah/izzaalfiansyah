@@ -13,7 +13,7 @@ const Index: Component = () => {
             <div>
               {[...name].map((i) => (
                 <span
-                  class="transition transform hover:(rotate-45 text-blue-500) text-shadow"
+                  class="transition transform hover:(rotate-45 text-primary) text-shadow"
                   classList={{ "hover:inline-block": i != " " }}
                 >
                   {i}
@@ -26,13 +26,13 @@ const Index: Component = () => {
           <a
             href={CV}
             target="_blank"
-            class="bg-white dark:bg-gray-900 shadow text-blue-500 uppercase rounded-full px-8 p-3 text-sm inline-block transform transition hover:scale-110"
+            class="bg-white dark:bg-gray-900 shadow uppercase rounded-full px-8 p-3 text-sm inline-block transform transition hover:scale-110"
           >
             DOWNLOAD CV
           </a>
           <Link
             href="/about"
-            class="bg-blue-500 shadow text-white uppercase rounded-full px-8 p-3 text-sm inline-block transform transition hover:scale-110"
+            class="bg-primary shadow text-white dark:text-gray-900 uppercase rounded-full px-8 p-3 text-sm inline-block transform transition hover:scale-110"
           >
             ABOUT ME
           </Link>
@@ -41,7 +41,7 @@ const Index: Component = () => {
       <div class="order-first lg:order-last">
         <img
           src="/assets/me.png"
-          class="rounded-full lg:w-330px w-200px lg:h-330px h-200px border-8 object-cover border-white shadow lg:mb-0 mb-14 cursor-pointer transition transform hover:-translate-y-5 mt-5"
+          class="rounded-full lg:w-330px w-200px lg:h-330px h-200px border-8 object-cover border-white dark:border-gray-900 shadow lg:mb-0 mb-14 cursor-pointer transition transform hover:-translate-y-5 mt-5"
         />
       </div>
     </div>
