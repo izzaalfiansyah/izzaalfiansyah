@@ -98,7 +98,7 @@ const App: Component = () => {
           ></div>
         </Show>
         <div
-          class="bg-white rounded-xl w-72 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
+          class="bg-white rounded-xl w-80 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
           classList={{
             "!translate-x-0": showSidebar(),
           }}
@@ -139,7 +139,7 @@ const App: Component = () => {
             </For>
           </ul>
         </div>
-        <div class="lg:ml-72 lg:mt-0 mt-20 p-5 flex items-stretch w-full">
+        <div class="lg:ml-80 lg:mt-0 mt-20 p-5 flex items-stretch w-full">
           <Router />
         </div>
         {/* <div class="nav h-15 px-6 flex z-20 flex-row items-center bg-white dark:bg-gray-900 shadow lg:(absolute left-0 bottom-0 top-0 w-72 h-screen flex-col py-10 justify-between) transition relative rounded-xl">
