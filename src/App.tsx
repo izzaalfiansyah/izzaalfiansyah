@@ -86,7 +86,7 @@ const App: Component = () => {
   return (
     <div class="min-h-screen lg:p-3 p-0.5 bg-primary flex items-stretch bg-center bg-fixed bg-cover bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIZ485eueXmsPR6z4HhzXF1Fl7NoQhv3kLyA&usqp=CAU')] dark:bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC-h9ytvbqRrKymPrUc7GeDcErNlVYE_lq9odW2oXmxfeT3sM6yNToxVn9s8-iEcHiF1w&usqp=CAU')] transition">
       <div class="bg-white transition bg-opacity-25 dark:bg-opacity-25 backdrop-blur border-white dark:border-gray-900 border-2 !border-opacity-25 text-black dark:bg-gray-800 dark:text-white relative rounded-xl overflow-hidden shadow w-full flex items-stretch">
-        <div class="lg:hidden absolute top-0 left-0 right-0 h-20 bg-white dark:bg-gray-900 !bg-opacity-25 shadow-sm flex items-center justify-between px-5">
+        <div class="lg:hidden absolute top-0 left-0 right-0 h-20 bg-white dark:bg-gray-900 !bg-opacity-50 shadow-sm flex items-center justify-between px-5">
           <button type="button" onClick={toggleSidebar}>
             <i class="mdi mdi-menu text-xl"></i>
           </button>
