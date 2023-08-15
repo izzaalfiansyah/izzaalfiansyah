@@ -84,7 +84,7 @@ const App: Component = () => {
   });
 
   return (
-    <div class="">
+    <div class="dark">
       <div
         class="min-h-screen lg:p-3 p-0.5 bg-primary flex items-stretch"
         style={{ "background-image": "" }}
