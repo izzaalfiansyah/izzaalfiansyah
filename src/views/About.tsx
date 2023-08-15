@@ -1,3 +1,4 @@
+import Title from "@/components/title/title";
 import { Link } from "@solidjs/router";
 import { Component, For } from "solid-js";
 
@@ -71,12 +72,12 @@ const About: Component = () => {
 
   return (
     <>
-      <div class="lg:min-h-100vh flex flex-wrap -mx-4 lg:py-10 justify-center">
-        <div class="w-full text-center mb-5 mt-5 px-4">
-          <div class="text-blue-500 font-bold text-3xl">ABOUT ME</div>
-          <div>A short piece about my personal background</div>
-        </div>
-        <div class="w-full lg:w-4/6 p-4">
+      <div class="w-full lg:px-10">
+        <Title
+          title="About"
+          subtitle="A short piece about my personal background"
+        />
+        <div class="w-full">
           <div class="bg-white dark:bg-gray-900 rounded shadow p-4 mb-4 transition hover:(transform scale-105)">
             <p class="mb-4">
               Hello! My Name is Muhammad Izza Alfiansyah and you can call me
@@ -85,7 +86,7 @@ const About: Component = () => {
               <a
                 href="https://esekmaprima.com"
                 target="_blank"
-                class="text-purple-500"
+                class="text-primary"
               >
                 SMK PGRI 5 Jember
               </a>
@@ -97,7 +98,7 @@ const About: Component = () => {
               <a
                 href="https://polije.ac.id"
                 target="_blank"
-                class="text-purple-500"
+                class="text-primary"
               >
                 Politeknik Negeri Jember
               </a>
@@ -121,12 +122,13 @@ const About: Component = () => {
               </For>
             </div>
             You can see my experience at{" "}
-            <Link href="/project" class="text-purple-500">
+            <Link href="/project" class="text-primary">
               project
             </Link>
             .
           </div>
         </div>
+        <br />
       </div>
     </>
   );
