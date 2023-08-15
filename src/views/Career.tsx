@@ -1,3 +1,4 @@
+import Title from "@/components/title/title";
 import { Component } from "solid-js";
 
 const Career: Component = () => {
@@ -23,12 +24,9 @@ const Career: Component = () => {
 
   return (
     <>
-      <div class="lg:min-h-100vh flex flex-wrap -mx-4 lg:py-10 justify-center">
-        <div class="w-full text-center mb-5 mt-5 px-4">
-          <div class="text-blue-500 font-bold text-3xl">CAREER</div>
-          <div>The amazing of my experiences</div>
-        </div>
-        <div class="w-full lg:w-4/5 p-4">
+      <div class="w-full">
+        <Title title="Career" subtitle="The amazing of my experience" />
+        <div class="w-full">
           {data.map((item) => (
             <div class="bg-white dark:bg-gray-900 rounded shadow p-4 mb-4 transition hover:(transform scale-105) mb-3">
               <div class="flex md:flex-row flex-col justify-between items-center">
@@ -39,7 +37,7 @@ const Career: Component = () => {
                   />
                 </div>
                 <div class="md:pl-5 w-full">
-                  <div class="text-3xl font-semibold text-blue-500">
+                  <div class="text-3xl font-semibold text-primary">
                     {item.company}
                   </div>
                   <div class="mt-1">{item.position}</div>

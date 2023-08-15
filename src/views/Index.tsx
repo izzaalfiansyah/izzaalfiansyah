@@ -6,7 +6,7 @@ const Index: Component = () => {
   const names = ["Muhammad Izza", "Alfiansyah"];
 
   return (
-    <div class="flex flex-wrap flex-col lg:flex-row items-center justify-center lg:justify-between lg:px-10 w-full">
+    <div class="flex flex-wrap flex-col lg:flex-row items-center justify-center lg:justify-between w-full">
       <div class="lg:flex-1 text-center lg:text-left">
         <div class="lg:text-60px text-35px font-bold">
           {names.map((name) => (

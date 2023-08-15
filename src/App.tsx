@@ -143,7 +143,7 @@ const App: Component = () => {
               </For>
             </ul>
           </div>
-          <div class="lg:ml-80 lg:mt-0 mt-20 p-5 flex items-stretch w-full overflow-y-scroll">
+          <div class="lg:ml-80 lg:mt-0 mt-20 py-10 lg:px-10 p-5 flex items-stretch w-full overflow-y-scroll">
             <Router />
           </div>
           {/* <div class="nav h-15 px-6 flex z-20 flex-row items-center bg-white dark:bg-gray-900 shadow lg:(absolute left-0 bottom-0 top-0 w-72 h-screen flex-col py-10 justify-between) transition relative rounded-xl">

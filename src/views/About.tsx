@@ -72,7 +72,7 @@ const About: Component = () => {
 
   return (
     <>
-      <div class="w-full lg:px-10">
+      <div class="w-full">
         <Title
           title="About"
           subtitle="A short piece about my personal background"
@@ -128,7 +128,6 @@ const About: Component = () => {
             .
           </div>
         </div>
-        <br />
       </div>
     </>
   );
