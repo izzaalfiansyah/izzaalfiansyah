@@ -40,6 +40,7 @@ const App: Component = () => {
   const [showSidebar, setShowSidebar] = createSignal(false);
   const [audioPlaying, setAudioPlaying] = createSignal<boolean>(false);
   const [darkMode, setDarkMode] = createSignal<boolean>(false);
+  const [isLoading, setIsLoading] = createSignal(true);
 
   function handleMusic() {
     if (audioPlaying()) {
@@ -81,125 +82,101 @@ const App: Component = () => {
 
     setAudio(music);
     darkInit();
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
   });
 
   return (
     <div class="min-h-screen lg:p-3 p-0.5 bg-primary flex items-stretch bg-center bg-fixed bg-cover bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIZ485eueXmsPR6z4HhzXF1Fl7NoQhv3kLyA&usqp=CAU')] dark:bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC-h9ytvbqRrKymPrUc7GeDcErNlVYE_lq9odW2oXmxfeT3sM6yNToxVn9s8-iEcHiF1w&usqp=CAU')] transition">
       <div class="bg-white transition bg-opacity-25 dark:bg-opacity-25 backdrop-blur border-white dark:border-gray-900 border-2 !border-opacity-25 text-black dark:bg-gray-800 dark:text-white relative rounded-xl overflow-hidden shadow w-full flex items-stretch">
-        <div class="lg:hidden absolute top-0 left-0 right-0 h-20 rounded-xl bg-white dark:bg-gray-900 !bg-opacity-50 shadow-sm flex items-center justify-between px-5">
-          <button type="button" onClick={toggleSidebar}>
-            <i class="mdi mdi-menu text-xl"></i>
-          </button>
-        </div>
-        <Show when={showSidebar()}>
+        <Show
+          when={!isLoading()}
+          fallback={
+            <div class="flex flex-col items-center justify-center absolute top-0 left-0 right-0 bottom-0">
+              <div class="flex loading">
+                <div class="bg-primary p-7 rounded-full"></div>
+                <div class="bg-white dark:bg-gray-900 !bg-opacity-50 p-7 rounded-full"></div>
+              </div>
+            </div>
+          }
+        >
+          <div class="lg:hidden absolute top-0 left-0 right-0 h-20 rounded-xl bg-white dark:bg-gray-900 !bg-opacity-50 shadow-sm flex items-center justify-between px-5">
+            <button type="button" onClick={toggleSidebar}>
+              <i class="mdi mdi-menu text-xl"></i>
+            </button>
+          </div>
+          <Show when={showSidebar()}>
+            <div
+              onClick={toggleSidebar}
+              class="lg:hidden fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 z-49"
+            ></div>
+          </Show>
           <div
-            onClick={toggleSidebar}
-            class="lg:hidden fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 z-49"
-          ></div>
+            class="bg-white dark:bg-gray-900 lg:!bg-opacity-50 bg-opacity-100 rounded-r-xl w-80 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
+            classList={{
+              "!translate-x-0": showSidebar(),
+            }}
+          >
+            <div class="h-[250px] flex items-center flex-col justify-center">
+              <div class="rounded-full bg-opacity-25 p-1 shadow relative">
+                <img
+                  src="/assets/me.png"
+                  alt="My Image"
+                  class="w-[100px] h-[100px] rounded-full"
+                />
+                <div class="absolute bottom-2 right-2 bg-green-400 rounded-full p-1.5 border-4 border-white dark:border-gray-900 shadow-sm"></div>
+              </div>
+              <div class="mt-3 text-center">
+                <div class="text-primary">Muhammad Izza Alfiansyah</div>
+                <div class="font-light text-xs">Full Stack Developer</div>
+              </div>
+            </div>
+            <ul class="px-5">
+              <For each={paths}>
+                {(item) => (
+                  <li class="mb-2">
+                    <Link
+                      href={item.path}
+                      title={item.title}
+                      class="px-5 text-gray-700 dark:text-gray-400 font-light block rounded-full bg-opacity-50 dark:bg-opacity-50 bg-white dark:bg-gray-900 transform transition hover:-translate-x-1 py-2 flex items-center outline-none shadow-sm"
+                      onClick={toggleSidebar}
+                      classList={{
+                        "!bg-primary !bg-opacity-100 !text-white !dark:text-gray-900":
+                          location.pathname == item.path,
+                      }}
+                    >
+                      <i class={"mdi text-lg mr-3 " + item.icon}></i>
+                      {item.title}
+                    </Link>
+                  </li>
+                )}
+              </For>
+            </ul>
+            <div class="mt-10 flex items-center justify-center">
+              <button class="outline-none" onClick={toggleDark}>
+                <i
+                  class="text-xl mdi text-primary mdi-weather-night"
+                  classList={{ "mdi-weather-sunny": !darkMode() }}
+                ></i>
+              </button>
+            </div>
+          </div>
+          <div class="lg:ml-80 lg:mt-0 mt-20 py-10 lg:px-10 p-2.5 flex items-stretch w-full view">
+            <Router />
+          </div>
+          <button
+            class="outline-none absolute top-5 right-5 w-10 z-10 h-10 flex items-center justify-center rounded-full transition bg-primary shadow-lg"
+            onClick={handleMusic}
+          >
+            <i
+              class="mdi dark:text-gray-900 text-white mdi-access-point text-xl"
+              classList={{ "animate-spin": audioPlaying() }}
+            ></i>
+          </button>
         </Show>
-        <div
-          class="bg-white dark:bg-gray-900 lg:!bg-opacity-50 bg-opacity-100 rounded-r-xl w-80 absolute top-0 left-0 bottom-0 shadow z-50 transition transform lg:translate-x-0 -translate-x-full"
-          classList={{
-            "!translate-x-0": showSidebar(),
-          }}
-        >
-          <div class="h-[250px] flex items-center flex-col justify-center">
-            <div class="rounded-full bg-opacity-25 p-1 shadow relative">
-              <img
-                src="/assets/me.png"
-                alt="My Image"
-                class="w-[100px] h-[100px] rounded-full"
-              />
-              <div class="absolute bottom-2 right-2 bg-green-400 rounded-full p-1.5 border-4 border-white dark:border-gray-900 shadow-sm"></div>
-            </div>
-            <div class="mt-3 text-center">
-              <div class="text-primary">Muhammad Izza Alfiansyah</div>
-              <div class="font-light text-xs">Full Stack Developer</div>
-            </div>
-          </div>
-          <ul class="px-5">
-            <For each={paths}>
-              {(item) => (
-                <li class="mb-2">
-                  <Link
-                    href={item.path}
-                    title={item.title}
-                    class="px-5 text-gray-700 dark:text-gray-400 font-light block rounded-full bg-opacity-50 dark:bg-opacity-50 bg-white dark:bg-gray-900 transform transition hover:-translate-x-1 py-2 flex items-center outline-none shadow-sm"
-                    onClick={toggleSidebar}
-                    classList={{
-                      "!bg-primary !bg-opacity-100 !text-white !dark:text-gray-900":
-                        location.pathname == item.path,
-                    }}
-                  >
-                    <i class={"mdi text-lg mr-3 " + item.icon}></i>
-                    {item.title}
-                  </Link>
-                </li>
-              )}
-            </For>
-          </ul>
-          <div class="mt-10 flex items-center justify-center">
-            <button class="outline-none" onClick={toggleDark}>
-              <i
-                class="text-xl mdi text-primary mdi-weather-night"
-                classList={{ "mdi-weather-sunny": !darkMode() }}
-              ></i>
-            </button>
-          </div>
-        </div>
-        <div class="lg:ml-80 lg:mt-0 mt-20 py-10 lg:px-10 p-2.5 flex items-stretch w-full">
-          <Router />
-        </div>
-        {/* <div class="nav h-15 px-6 flex z-20 flex-row items-center bg-white dark:bg-gray-900 shadow lg:(absolute left-0 bottom-0 top-0 w-72 h-screen flex-col py-10 justify-between) transition relative rounded-xl">
-          <div class="flex-1">
-            <Link
-              href="/"
-              class="text-blue-500 text-2xl text-shadow transform lg:(-rotate-90 inline-block mt-8)"
-            >
-              Alfiansyah
-            </Link>
-          </div>
-          <div class="fixed z-20 bottom-5 left-5 right-5 rounded-full transition bg-white dark:bg-gray-900 shadow p-2 flex flex-row justify-evenly px-4 lg:(flex-1 flex-col relative p-0 left-0 right-0 py-4 mb-20 shadow-none)">
-            <For each={paths}>
-              {(item) => (
-                <Link
-                  href={item.path}
-                  title={item.title}
-                  class="px-3 text-gray-600 hover:text-blue-500 transform transition hover:-translate-y-1 (lg:px-0 py-3)"
-                  classList={{
-                    "!text-blue-500": location.pathname == item.path,
-                  }}
-                >
-                  <i class={"mdi text-2xl " + item.icon}></i>
-                </Link>
-              )}
-            </For>
-          </div>
-          <div class="flex-1 text-right lg:(absolute bottom-5 left-0 right-0 flex items-center justify-center)">
-            <button class="outline-none" onClick={toggleDark}>
-              <i
-                class="text-xl mdi text-yellow-500 mdi-weather-night"
-                classList={{ "mdi-weather-sunny": !darkMode() }}
-              ></i>
-            </button>
-          </div>
-        </div> */}
-        {/* <div class="px-4 pb-16 py-10 lg:(ml-18 py-0 pb-0) lg:min-h-screen view">
-          <Router></Router>
-        </div> */}
-        <button
-          class="outline-none absolute top-5 right-5 w-10 z-10 h-10 flex items-center justify-center rounded-full transition bg-primary shadow-lg"
-          onClick={handleMusic}
-        >
-          <i
-            class="mdi dark:text-gray-900 text-white mdi-access-point text-xl"
-            classList={{ "animate-spin": audioPlaying() }}
-          ></i>
-        </button>
       </div>
-      {/* <div class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center font-semibold lg:text-5xl text-3xl bg-white dark:bg-gray-900 z-30 text-blue-500 animate-loading pointer-events-none">
-        <span class="animate-bounce">Loading...</span>
-      </div> */}
     </div>
   );
 };
