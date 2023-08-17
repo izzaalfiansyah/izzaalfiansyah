@@ -51,15 +51,15 @@ const ProjectDetail: Component = () => {
     <>
       <div class="w-full">
         <Title title={item.name} subtitle="" />
-        <section class="splide">
+        <section class="splide bg-white dark:bg-gray-900 !bg-opacity-25 rounded-lg overflow-hidden shadow-sm">
           <div class="splide__track">
             <ul class="splide__list">
               <For each={item.photo}>
                 {(p) => (
-                  <li class="splide__slide">
+                  <li class="splide__slide flex items-center justify-center">
                     <img
                       src={"/assets/project/" + p}
-                      class="rounded-lg shadow object-cover"
+                      class="shadow object-cover w-full"
                     />
                   </li>
                 )}
@@ -89,6 +89,7 @@ const ProjectDetail: Component = () => {
                 {(item) => (
                   <a
                     href={lang[item.toLowerCase() as "svelte"].web}
+                    target="_blank"
                     class="bg-white dark:bg-gray-900 !bg-opacity-30 rounded shadow p-5 text-center block hover:shadow-primary transition mt-4"
                   >
                     <img
@@ -102,18 +103,6 @@ const ProjectDetail: Component = () => {
             </div>
           </div>
         </div>
-        {/* <div class="text-right">
-          <Show when={item.link}>
-            <a
-              href={item.link}
-              target="_blank"
-              class="uppercase mr-4 flex items-center dark:bg-gray-900 dark:hover:bg-primary bg-white rounded-full shadow h-10 px-4 p-1 hover:bg-primary hover:text-white transition mt-4 float-left"
-            >
-              <i class="mdi mdi-link-variant"></i> Preview
-            </a>
-          </Show>
-          
-        </div> */}
         <div class="bg-white dark:bg-gray-900 !bg-opacity-30 shadow p-5 rounded-lg mt-5 h-80 flex items-center justify-center">
           <div class="text-center">
             <div class="lg:text-5xl text-3xl font-semibold">
