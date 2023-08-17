@@ -27,6 +27,14 @@ export const lang = {
     web: "https://svelte.dev",
     img: "https://cdn.worldvectorlogo.com/logos/svelte-1.svg",
   },
+  solid: {
+    web: "https://solidjs.com",
+    img: "https://cdn.worldvectorlogo.com/logos/solid-logo.svg",
+  },
+  flutter: {
+    web: "https://flutter.dev",
+    img: "https://cdn.worldvectorlogo.com/logos/flutter.svg",
+  },
 };
 
 const ProjectDetail: Component = () => {
