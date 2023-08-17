@@ -4,6 +4,14 @@ import { Component, For } from "solid-js";
 
 export const project = [
   {
+    name: "LostInfo",
+    description:
+      "Platform informasi pencarian dan pelaporan barang hilang. Dengan aplikasi ini penyebaran informasi mengenai barang hilang dan temuan menjadi lebih efektif. Fitur unggulan aplikasi ini adalah adanya perbandingan antara barang temuan dan barang hilang sehingga pengguna lebih menemukan barang miliknya dari barang yang serupa. Disediakan juga fitur lelang apabila tidak ada yang mengeklaim barang temuan user, selain itu user juga bisa melelang barang miliknya yang sudah tidak digunakan.",
+    team: true,
+    language: ["Laravel", "Solid", "Flutter"],
+    photo: ["lostinfo.png", "lostinfo2.jpg", "lostinfo3.jpg", "lostinfo4.jpg"],
+  },
+  {
     name: "Rental Mobil",
     description:
       "Jasa layanan penyewaan dan rental mobil. Pengguna dapat mencari, memilih, dan memesan mobil yang sesuai dengan kebutuhan tanpa harus datang ke tempat sewa secara langsung",
