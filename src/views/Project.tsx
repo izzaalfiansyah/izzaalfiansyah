@@ -4,6 +4,14 @@ import { Component, For } from "solid-js";
 
 export const project = [
   {
+    name: "Rental Mobil",
+    description:
+      "Jasa layanan penyewaan dan rental mobil. Pengguna dapat mencari, memilih, dan memesan mobil yang sesuai dengan kebutuhan tanpa harus datang ke tempat sewa secara langsung",
+    team: false,
+    language: ["Laravel"],
+    photo: ["rental-mobil.jpg", "rental-mobil2.jpg", "rental-mobil3.jpg"],
+  },
+  {
     name: "Arsogi Group",
     description: "Aplikasi katalog produk dan transaksi jual beli",
     link: "http://arsogigrup.com",
@@ -77,7 +85,7 @@ export const project = [
       "Sistem Inventarisasi Produk Hukum Daerah Sekretariat DPRD Kabupaten Trenggalek",
     link: "https://siphuda.com",
     language: ["Laravel", "Svelte"],
-    photo: ["siphuda.png", "siphuda2.png"],
+    photo: ["siphuda.png"],
   },
   {
     name: "Prima Usadha Jaya",
