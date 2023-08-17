@@ -84,12 +84,12 @@ const ProjectDetail: Component = () => {
           </div>
           <div class="bg-white dark:bg-gray-900 !bg-opacity-30 shadow p-5 rounded-lg w-full lg:flex-1">
             <div class="font-semibold">Stacks</div>
-            <div class="grid grid-cols-4 gap-3">
+            <div class="grid grid-cols-3 gap-3">
               <For each={item.language.length ? item.language : []}>
                 {(item) => (
                   <a
                     href={lang[item.toLowerCase() as "svelte"].web}
-                    class="bg-white dark:bg-gray-900 !bg-opacity-30 rounded shadow p-2 text-center block hover:shadow-primary transition mt-4"
+                    class="bg-white dark:bg-gray-900 !bg-opacity-30 rounded shadow p-5 text-center block hover:shadow-primary transition mt-4"
                   >
                     <img
                       src={lang[item.toLowerCase() as "svelte"].img}
