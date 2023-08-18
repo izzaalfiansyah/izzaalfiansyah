@@ -120,7 +120,7 @@ const App: Component = () => {
             }}
           >
             <div class="h-[250px] flex items-center flex-col justify-center">
-              <div class="rounded-full bg-opacity-25 p-1 shadow relative">
+              <div class="rounded-full bg-white dark:bg-gray-900 !bg-opacity-25 p-1 shadow relative">
                 <img
                   src="/assets/me.png"
                   alt="My Image"
