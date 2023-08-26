@@ -1,10 +1,10 @@
 import { Link, useParams } from "@solidjs/router";
 import { Component, For, Show, onMount } from "solid-js";
-import { project } from "./Project";
 import Title from "@/components/title/title";
 
 import "@splidejs/splide/dist/css/splide.min.css";
 import Splide from "@splidejs/splide";
+import project from "@/datas/project";
 
 export const lang = {
   codeigniter: {
