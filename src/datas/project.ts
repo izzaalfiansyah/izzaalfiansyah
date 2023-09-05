@@ -1,4 +1,13 @@
-export default [
+interface Project {
+  name: string;
+  description: string;
+  team?: boolean;
+  language: string[];
+  photo: string[];
+  link?: string;
+}
+
+const projects: Project[] = [
   {
     name: "KuyBisnis",
     description:
@@ -260,3 +269,5 @@ export default [
     photo: ["pilkada.png", "pilkada2.png"],
   },
 ];
+
+export default projects;
