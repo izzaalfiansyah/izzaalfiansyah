@@ -23,6 +23,13 @@ const Career: Component = () => {
         "https://png.pngtree.com/png-clipart/20221110/original/pngtree-f-logo-business-symbols-vector-template-letter-picture-image_3626283.png",
     },
     {
+      company: "Bima Technologies",
+      position: "Junior IoT Engineer",
+      date: "Sept 2023 - Now",
+      image:
+        "https://img.mbizmarket.co.id/company/thumbs/343x343/2022/10/25/d2e17cc3d997e596ce8c0c035029920b.jpg",
+    },
+    {
       company: "Freelance",
       position: "Full Stack Developer",
       date: "Mar 2022 - Now",
