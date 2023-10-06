@@ -35,6 +35,10 @@ export const lang = {
     web: "https://flutter.dev",
     img: "https://cdn.worldvectorlogo.com/logos/flutter.svg",
   },
+  express: {
+    web: "https://expressjs.com",
+    img: "https://cdn.worldvectorlogo.com/logos/express-109.svg",
+  },
 };
 
 const ProjectDetail: Component = () => {
