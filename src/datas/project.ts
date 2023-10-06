@@ -9,6 +9,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    name: "Simple Whatsapp BOT",
+    description:
+      "simple whatsApp bot that can send messages automatically and convert images to stickers",
+    team: false,
+    language: ["Express"],
+    photo: ["whatsapp-bot.jpg", "whatsapp-bot2.jpg"],
+  },
+  {
     name: "KuyBisnis",
     description:
       "Tracking bisnis dari kelompok mahasiswa. Rencanakan kewirausahaan, kembangkan bisnis, dan ketahui hasil kegiatan bisnis berbasis web",
