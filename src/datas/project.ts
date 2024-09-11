@@ -9,6 +9,47 @@ interface Project {
 
 const projects: Project[] = [
   {
+    name: "Vitalmetrics",
+    description: "Platform kalkulator BMI berbasis Internet of Things",
+    team: false,
+    language: ["Arduino", "Flutter"],
+    photo: ["vitalmetrics.png"],
+  },
+  {
+    name: "Aset Tanah Polda",
+    description: "Sistem pengelolaan tanah polda dan wilayah",
+    team: false,
+    language: ["Laravel"],
+    photo: [
+      "tanah-polda.png",
+      "tanah-polda2.png",
+      "tanah-polda3.png",
+      "tanah-polda4.png",
+      "tanah-polda5.png",
+    ],
+  },
+  {
+    name: "Java Horoscope",
+    description:
+      "Web scrapping dan implementasi dari situs primbon.com menggunakan express.js, puppeteer, dan vue.js",
+    team: false,
+    language: ["Express", "Solid"],
+    photo: ["java-horoscope.png", "java-horoscope2.png", "java-horoscope3.png"],
+  },
+  {
+    name: "Fermonitor",
+    description:
+      "Sistem identifikasi kematangan tapai singkong melalui kadar gas berbasis Internet of Things",
+    team: false,
+    language: ["Arduino", "Solid"],
+    photo: [
+      "fermonitor.png",
+      "fermonitor2.png",
+      "fermonitor3.png",
+      "fermonitor4.png",
+    ],
+  },
+  {
     name: "Simple Whatsapp BOT",
     description:
       "simple whatsApp bot that can send messages automatically and convert images to stickers",

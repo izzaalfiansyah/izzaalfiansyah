@@ -29,7 +29,7 @@ export const lang = {
   },
   solid: {
     web: "https://solidjs.com",
-    img: "https://cdn.worldvectorlogo.com/logos/solid-logo.svg",
+    img: "https://www.solidjs.com/img/logo/without-wordmark/logo.png",
   },
   flutter: {
     web: "https://flutter.dev",
@@ -38,6 +38,10 @@ export const lang = {
   express: {
     web: "https://expressjs.com",
     img: "https://cdn.worldvectorlogo.com/logos/express-109.svg",
+  },
+  arduino: {
+    web: "https://www.arduino.cc",
+    img: "https://cdn.worldvectorlogo.com/logos/arduino-1.svg",
   },
 };
 
