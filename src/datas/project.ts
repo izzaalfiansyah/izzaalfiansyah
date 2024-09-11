@@ -34,6 +34,7 @@ const projects: Project[] = [
       "Web scrapping dan implementasi dari situs primbon.com menggunakan express.js, puppeteer, dan vue.js",
     team: false,
     language: ["Express", "Solid"],
+    link: "https://java-horoscope.vercel.app",
     photo: ["java-horoscope.png", "java-horoscope2.png", "java-horoscope3.png"],
   },
   {
@@ -42,6 +43,7 @@ const projects: Project[] = [
       "Sistem identifikasi kematangan tapai singkong melalui kadar gas berbasis Internet of Things",
     team: false,
     language: ["Arduino", "Solid"],
+    link: "https://www.youtube.com/watch?v=EkA_5Wfij40&t=363s",
     photo: [
       "fermonitor.png",
       "fermonitor2.png",
