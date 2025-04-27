@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1dc5fb;
+  --color-secondary: #00ff00;
+  --default-font-family: "National Park", sans-serif;
+}
+
+html,
+body,
+.bg-background {
+  @apply bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100;
+}
+
+.main-container {
+  @apply max-w-[1000px] mx-auto;
+}
