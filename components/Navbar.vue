@@ -37,7 +37,9 @@ const route = useRoute();
     <div
       class="h-20 main-container px-5 mx-auto flex items-center justify-between"
     >
-      <a href="/" class="font-semibold text-2xl text-primary">izzaalfiansyah</a>
+      <NuxtLink href="/" class="font-semibold text-2xl text-primary"
+        >izzaalfiansyah</NuxtLink
+      >
       <ul class="flex items-center space-x-8">
         <template v-for="link in links">
           <li class="relative">
