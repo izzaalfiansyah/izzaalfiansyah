@@ -1,10 +1,12 @@
 <script lang="ts" setup>
+import { profile } from "~/datas/identity";
 import MyPhoto from "./assets/images/izzaalfiansyah.png";
 </script>
 
 <template>
+  <SeoMeta></SeoMeta>
   <div
-    class="rounded-lg min-h-[80vh] bg-primary/15 px-10 flex flex-wrap items-center justify-between overflow-x-hidden relative"
+    class="rounded-lg min-h-[80vh] bg-gradient-to-t from-primary/15 to-transparent px-10 flex flex-wrap items-center justify-between overflow-x-hidden relative"
   >
     <img
       :src="MyPhoto"
@@ -16,25 +18,23 @@ import MyPhoto from "./assets/images/izzaalfiansyah.png";
       data-aos="fade-right"
     >
       <div class="lg:text-6xl text-5xl font-bold">
-        Muhammad <br />
-        <span class="text-primary">Izza Alfiansyah</span>
+        {{ profile.firstName }} <br />
+        <span class="text-primary">{{ profile.lastName }}</span>
       </div>
       <div>
-        <span class="font-thin text-xl"
-          >Full Stack & Mobile Flutter Developer</span
-        >
+        <span class="font-thin text-xl">{{ profile.position }}</span>
       </div>
-      <div class="flex items-center space-x-6">
+      <div class="flex items-center space-x-6 flex-wrap">
         <a
           href="/cv.pdf"
           target="_blank"
-          class="px-8 py-3 rounded bg-primary text-white outline-none"
+          class="px-8 py-3 rounded bg-primary text-white outline-none mb-3"
         >
           Download CV
         </a>
         <NuxtLink
           href="/contact"
-          class="px-8 py-3 rounded dark:bg-gray-900 bg-white outline-none"
+          class="px-8 py-3 rounded dark:bg-gray-900 bg-white outline-none mb-3"
         >
           Contact Me
         </NuxtLink>

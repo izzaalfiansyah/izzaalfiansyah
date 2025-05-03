@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-full bg-primary/15 py-30 px-10 rounded-lg flex flex-col justify-center items-center"
+    class="h-full bg-gradient-to-b from-primary/15 to-transparent py-30 px-10 rounded-lg flex flex-col justify-center items-center"
     data-aos="fade-up"
   >
     <div class="text-4xl font-bold text-center">Are you interested?</div>
