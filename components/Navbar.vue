@@ -35,7 +35,7 @@ const route = useRoute();
     class="bg-white/50 dark:bg-gray-900/50 backdrop-blur-3xl sticky top-0 left-0 right-0 z-50 border-b border-gray-100 dark:border-gray-800"
   >
     <div
-      class="h-20 main-container px-5 mx-auto flex items-center justify-between"
+      class="md:h-20 h-auto py-5 main-container px-5 mx-auto flex md:flex-row flex-col items-center justify-between md:space-y-0 space-y-5"
     >
       <NuxtLink href="/" class="font-semibold text-2xl text-primary"
         >izzaalfiansyah</NuxtLink
@@ -49,6 +49,7 @@ const route = useRoute();
               :class="{
                 'text-primary after:content-[\'\'] after:absolute after:-bottom-1 after:left-0 after:right-0 after:border-b-2 after:border-primary':
                   route.path == link.path,
+                'md:inline hidden': link.path == '/',
               }"
               >{{ link.name }}</NuxtLink
             >

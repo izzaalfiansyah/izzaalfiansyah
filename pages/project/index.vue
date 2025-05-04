@@ -13,7 +13,7 @@ import { projects } from "~/datas/project";
       </div>
     </div>
     <div class="mt-10">
-      <div class="grid lg:grid-cols-2 grid-cols-1 gap-10 gap-y-10">
+      <div class="grid md:grid-cols-2 grid-cols-1 gap-10 gap-y-10">
         <template v-for="(project, i) in projects">
           <ProjectItem
             :project="project"

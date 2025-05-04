@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { profile } from "~/datas/identity";
 import { skills } from "~/datas/skill";
+
+import Me from "~/assets/images/me.png";
 </script>
 
 <template>
@@ -10,7 +12,7 @@ import { skills } from "~/datas/skill";
   >
     <div class="text-center">
       <img
-        src="https://media.licdn.com/dms/image/v2/D5603AQHerR8s9LGp6A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1722494257505?e=1751500800&v=beta&t=AvurztA8LDdE1zJHFpHd55zKAJ6NhgWE75_UXmluNRE"
+        :src="Me"
         class="size-36 inline-block rounded-full overflow-hidden"
         data-aos="fade-down"
       />
