@@ -41,10 +41,10 @@ onMounted(() => {
 
 <template>
   <div
-    class="fixed bottom-0 mx-auto left-0 right-0 flex items-center justify-center"
+    class="fixed bottom-0 mx-auto left-0 right-0 flex items-center justify-center pointer-events-none"
   >
     <button
-      class="cursor-pointer bg-background rounded-t-full px-3 py-3 pb-1.5 shadow hover:shadow-3xl hover:shadow-primary transition group"
+      class="cursor-pointer bg-background rounded-t-full px-3 py-3 pb-1.5 shadow hover:shadow-3xl hover:shadow-primary transition group pointer-events-auto"
       @click="toggleTheme"
     >
       <template v-if="theme == 'system'">

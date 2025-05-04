@@ -26,9 +26,10 @@ import { projects } from "~/datas/project";
       </div>
       <div class="flex items-center space-x-6 flex-wrap">
         <a
-          href="/cv.pdf"
+          href="/Muhammad Izza Alfiansyah - CV.pdf"
           target="_blank"
           class="px-8 py-3 rounded bg-primary text-white outline-none mb-3"
+          download
         >
           Download CV
         </a>
