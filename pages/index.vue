@@ -11,7 +11,7 @@ import { projects } from "~/datas/project";
     class="rounded-lg min-h-[80vh] bg-gradient-to-t from-primary/15 to-transparent flex flex-wrap items-center justify-between overflow-hidden relative"
   >
     <img
-      src="https://static.vecteezy.com/system/resources/thumbnails/049/688/540/small/blue-infinite-curvy-curly-line-3d-png.png"
+      src="/favicon.ico"
       class="absolute h-[50vh] md:scale-75 scale-50 top-24 md:right-0 right-auto left-auto object-cover md:inline-block hidden"
       data-aos="fade-left"
     />
