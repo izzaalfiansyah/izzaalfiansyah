@@ -14,10 +14,13 @@ const siteUrl = window.location.origin;
 
 <template>
   <Head>
-    <Title
-      >{{ profile.name }} | {{ profile.position }}
-      {{ title ? ` - ${title}` : "" }}</Title
-    >
+    <Title>
+      {{ title ? `${title} -` : "" }}
+      {{ profile.name }}
+      {{ " | " }}
+      {{ profile.position }}
+    </Title>
+
     <Meta name="title" :content="profile.siteName" />
     <Meta name="author" :content="profile.name" />
     <Meta name="description" :content="profile.description" />

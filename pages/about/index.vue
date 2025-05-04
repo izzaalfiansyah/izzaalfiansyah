@@ -28,7 +28,7 @@ import { skills } from "~/datas/skill";
       <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-4">
         <template v-for="skill in skills">
           <div
-            class="flex justify-center rounded bg-primary/15 p-8"
+            class="flex justify-center rounded bg-radial to-transparent from-primary/15 p-8"
             data-aos="fade-up"
           >
             <img :src="skill.icon" alt="" class="h-24" />

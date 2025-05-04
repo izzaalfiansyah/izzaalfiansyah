@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { profile } from "~/datas/identity";
 import MyPhoto from "./assets/images/izzaalfiansyah.png";
+import { projects } from "~/datas/project";
 </script>
 
 <template>
@@ -44,12 +45,12 @@ import MyPhoto from "./assets/images/izzaalfiansyah.png";
   <div class="min-h-screen py-20">
     <div class="text-center font-bold text-4xl" data-aos="fade-up">Project</div>
     <div class="mt-10">
-      <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
-        <template v-for="(_, i) in Array.from({ length: 4 })">
-          <div
+      <div class="grid lg:grid-cols-2 grid-cols-1 gap-8">
+        <template v-for="(project, i) in projects.slice(0, 4)">
+          <ProjectItem
             :data-aos="i % 2 === 0 ? 'fade-right' : 'fade-left'"
-            class="bg-primary/15 h-80 rounded-lg"
-          ></div>
+            :project="project"
+          />
         </template>
       </div>
     </div>
