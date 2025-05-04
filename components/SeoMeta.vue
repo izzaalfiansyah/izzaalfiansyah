@@ -32,6 +32,8 @@ const siteUrl = window.location.origin;
     <Meta property="og:site_url" :content="siteUrl" />
     <Meta property="og:site_name" :content="profile.siteName" />
 
+    <Link rel="icon" href="/favicon.ico"></Link>
+
     <template v-for="meta in metas || []">
       <Meta :name="meta.name" :property="meta.name" :content="meta.content" />
     </template>

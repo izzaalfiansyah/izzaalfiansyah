@@ -1,21 +1,20 @@
 <script lang="ts" setup>
 import { profile } from "~/datas/identity";
-import MyPhoto from "./assets/images/izzaalfiansyah.png";
 import { projects } from "~/datas/project";
 </script>
 
 <template>
   <SeoMeta></SeoMeta>
   <div
-    class="rounded-lg min-h-[80vh] bg-gradient-to-t from-primary/15 to-transparent px-10 flex flex-wrap items-center justify-between overflow-x-hidden relative"
+    class="rounded-lg min-h-[80vh] bg-gradient-to-t from-primary/15 to-transparent flex flex-wrap items-center justify-between overflow-hidden relative"
   >
     <img
-      :src="MyPhoto"
-      class="absolute h-[90vh] bottom-0 right-10"
+      src="/favicon.ico"
+      class="absolute h-[50vh] md:scale-75 scale-50 top-24 md:right-0 right-auto left-auto object-cover md:inline-block hidden"
       data-aos="fade-left"
     />
     <div
-      class="lg:w-1/2 w-full space-y-10 relative backdrop-blur-xs lg:h-auto min-h-[80vh] flex flex-col justify-center"
+      class="w-full space-y-10 relative backdrop-blur-xs lg:h-auto min-h-[80vh] flex flex-col justify-center md:px-10 px-5"
       data-aos="fade-right"
     >
       <div class="lg:text-6xl text-5xl font-bold">
@@ -27,9 +26,10 @@ import { projects } from "~/datas/project";
       </div>
       <div class="flex items-center space-x-6 flex-wrap">
         <a
-          href="/cv.pdf"
+          href="/Muhammad Izza Alfiansyah - CV.pdf"
           target="_blank"
           class="px-8 py-3 rounded bg-primary text-white outline-none mb-3"
+          download
         >
           Download CV
         </a>
