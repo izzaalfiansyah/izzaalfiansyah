@@ -2,24 +2,24 @@
 import { profile } from "~/datas/identity";
 import { skills } from "~/datas/skill";
 
-import Me from "~/assets/images/me.png";
+import About from "~/assets/images/about.png";
 </script>
 
 <template>
   <SeoMeta title="About Me"></SeoMeta>
   <div
-    class="h-[80vh] bg-gradient-to-t from-transparent to-transparent rounded-lg px-10 flex items-center justify-center"
+    class="h-[80vh] bg-gradient-to-t from-transparent via-transparent to-primary/10 rounded-lg px-10 flex items-center justify-center"
   >
     <div class="text-center">
       <img
-        :src="Me"
-        class="size-36 inline-block rounded-full overflow-hidden"
+        :src="About"
+        class="md:size-36 size-24 inline-block rounded-full overflow-hidden"
         data-aos="fade-down"
       />
       <div class="text-4xl font-semibold mt-5 text-primary" data-aos="fade-up">
         About Me
       </div>
-      <div class="mt-8" data-aos="fade-up">
+      <div class="mt-5" data-aos="fade-up">
         {{ profile.description }}
       </div>
     </div>
