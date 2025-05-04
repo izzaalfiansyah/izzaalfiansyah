@@ -16,9 +16,7 @@ const siteUrl = window.location.origin;
   <Head>
     <Title>
       {{ title ? `${title} -` : "" }}
-      {{ profile.name }}
-      {{ " | " }}
-      {{ profile.position }}
+      {{ profile.siteName }}
     </Title>
 
     <Meta name="title" :content="profile.siteName" />
@@ -26,11 +24,10 @@ const siteUrl = window.location.origin;
     <Meta name="description" :content="profile.description" />
     <Meta name="keywords" :content="profile.name" />
 
-    <Meta property="og:locale" content="en_US" />
-    <Meta property="og:title" :content="profile.name" />
+    <Meta property="og:title" :content="profile.siteName" />
+    <Meta property="og:url" :content="siteUrl" />
     <Meta property="og:description" :content="profile.description" />
-    <Meta property="og:site_url" :content="siteUrl" />
-    <Meta property="og:site_name" :content="profile.siteName" />
+    <Meta property="og:image" :content="`${siteUrl}/favicon.ico`" />
 
     <Link rel="icon" href="/favicon.ico"></Link>
 
