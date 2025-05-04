@@ -29,7 +29,13 @@ const siteUrl = window.location.origin;
     <Meta property="og:description" :content="profile.description" />
     <Meta property="og:image" :content="`${siteUrl}/favicon.ico`" />
 
-    <Link rel="icon" href="/favicon.ico"></Link>
+    <Link rel="icon" :href="`${siteUrl}/favicon.ico`" />
+    <Link
+      rel="shortcut icon"
+      :href="`${siteUrl}/favicon.ico`"
+      type="image/x-icon"
+    />
+    <Link rel="apple-touch-icon" :href="`${siteUrl}/favicon.ico`" />
 
     <template v-for="meta in metas || []">
       <Meta :name="meta.name" :property="meta.name" :content="meta.content" />
