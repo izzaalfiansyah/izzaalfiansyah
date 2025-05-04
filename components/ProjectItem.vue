@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <NuxtLink
-    class="rounded-lg relative text-left block group bg-gradient-to-r from-primary/15 to-transparent"
+    class="rounded-lg relative text-left block group bg-gradient-to-r from-transparent to-transparent"
     :href="`/project/${project.slug}`"
   >
     <div class="h-60 rounded-lg overflow-hidden relative">

@@ -8,7 +8,7 @@ import Me from "~/assets/images/me.png";
 <template>
   <SeoMeta title="About Me"></SeoMeta>
   <div
-    class="h-[80vh] bg-gradient-to-t from-primary/15 to-transparent rounded-lg px-10 flex items-center justify-center"
+    class="h-[80vh] bg-gradient-to-t from-transparent to-transparent rounded-lg px-10 flex items-center justify-center"
   >
     <div class="text-center">
       <img
