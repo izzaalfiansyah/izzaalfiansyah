@@ -5,5 +5,6 @@
       <slot></slot>
       <Footer></Footer>
     </div>
+    <FloatingThemeButton></FloatingThemeButton>
   </div>
 </template>

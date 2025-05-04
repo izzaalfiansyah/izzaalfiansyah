@@ -1,7 +1,5 @@
 <script lang="ts" setup>
 import { profile } from "~/datas/identity";
-import MyPhoto from "./assets/images/izzaalfiansyah.png";
-import Me from "./assets/images/me.png";
 import { projects } from "~/datas/project";
 </script>
 

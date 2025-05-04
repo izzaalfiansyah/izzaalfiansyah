@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap");
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: #1dc5fb;
   --color-secondary: #00ff00;
