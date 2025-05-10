@@ -3,6 +3,7 @@ import { profile } from "~/datas/identity";
 
 defineProps<{
   title?: string;
+  description?: string;
   metas?: Array<{
     name: string;
     content: any;
@@ -19,14 +20,17 @@ const siteUrl = window.location.origin;
       {{ profile.siteName }}
     </Title>
 
-    <Meta name="title" :content="profile.siteName" />
+    <Meta name="title" :content="title ?? profile.siteName" />
     <Meta name="author" :content="profile.name" />
-    <Meta name="description" :content="profile.description" />
+    <Meta name="description" :content="description ?? profile.description" />
     <Meta name="keywords" :content="profile.name" />
 
-    <Meta property="og:title" :content="profile.siteName" />
+    <Meta property="og:title" :content="title ?? profile.siteName" />
     <Meta property="og:url" :content="siteUrl" />
-    <Meta property="og:description" :content="profile.description" />
+    <Meta
+      property="og:description"
+      :content="description ?? profile.description"
+    />
     <Meta property="og:image" :content="`${siteUrl}/favicon.ico`" />
 
     <Link rel="icon" :href="`${siteUrl}/favicon.ico`" />

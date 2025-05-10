@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { contacts } from "~/datas/contact";
+
+const description = "The places where you can find me";
 </script>
 
 <template>
-  <SeoMeta title="Contact"></SeoMeta>
+  <SeoMeta title="Contact" :description="description"></SeoMeta>
   <div class="py-10">
     <div class="text-center" data-aos="fade-down">
       <div class="text-4xl font-bold">Contact</div>
-      <div>The places where you can find me</div>
+      <div>{{ description }}</div>
     </div>
     <div class="grid md:grid-cols-2 gap-4 mt-10">
       <template v-for="(contact, i) in contacts">

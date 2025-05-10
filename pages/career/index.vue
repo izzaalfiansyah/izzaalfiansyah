@@ -2,14 +2,16 @@
 import { careers } from "~/datas/career";
 
 const isOdd = (index: number) => index % 2 === 0;
+
+const description = "Let me share you some of my experience";
 </script>
 
 <template>
-  <SeoMeta title="Career"></SeoMeta>
+  <SeoMeta title="Career" :description="description"></SeoMeta>
   <div class="py-10">
     <div class="text-center" data-aos="fade-down">
       <div class="text-4xl font-bold">Career</div>
-      <div>Let me share you some of my experience</div>
+      <div>{{ description }}</div>
     </div>
     <div class="mt-20 space-y-10">
       <template v-for="(career, i) in careers">

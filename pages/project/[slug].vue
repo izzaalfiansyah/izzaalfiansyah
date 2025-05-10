@@ -8,7 +8,7 @@ const project = projects.find((p) => p.slug == slug)!;
 </script>
 
 <template>
-  <SeoMeta :title="`${project.name} - Project`"></SeoMeta>
+  <SeoMeta :title="project.name" :description="project.description"></SeoMeta>
   <div class="py-10">
     <div
       class="overflow-x-auto flex max-w-full no-scrollbar space-x-6 p-5 bg-gradient-to-t from-primary/10 to-transparent rounded-lg"

@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import { projects } from "~/datas/project";
+
+const description =
+  "Collection of works of achievements that I made individually or in groups";
 </script>
 
 <template>
-  <SeoMeta title="Project"></SeoMeta>
+  <SeoMeta title="Project" :description="description"></SeoMeta>
   <div class="py-10">
     <div class="text-center" data-aos="fade-down">
       <div class="text-4xl font-bold">Project</div>
       <div>
-        Collection of works of achievements that I made individually or in
-        groups
+        {{ description }}
       </div>
     </div>
     <div class="mt-10">
