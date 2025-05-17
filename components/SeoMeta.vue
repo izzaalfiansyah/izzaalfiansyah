@@ -10,7 +10,13 @@ defineProps<{
   }>;
 }>();
 
-const siteUrl = window.location.origin;
+const siteUrl = ref<string>("");
+
+onMounted(() => {
+  if (import.meta.env.client) {
+    siteUrl.value = window.location.origin;
+  }
+});
 </script>
 
 <template>
