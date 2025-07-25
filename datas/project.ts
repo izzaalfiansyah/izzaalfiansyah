@@ -10,6 +10,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: "Knowledge Management System",
+    description:
+      "Belajar bersama Badiklat Kemhan. Knowledge Management System adalah platform pembelajaran jarah jauh dan merdeka belajar online dari Badiklat Kemhan RI, yang membantu pengajar membuat diklat dan materi sehingga siswa dapat belajar di dalamnya",
+    team: true,
+    language: ["Laravel", "Alpine JS"],
+    photo: ["lms.png", "lms2.png", "lms3.png", "lms4.png", "lms5.png"],
+    link: "https://lms-staging.oriens.my.id",
+  },
+  {
     name: "Vitalmetrics",
     description: "Platform kalkulator BMI berbasis Internet of Things",
     team: false,
