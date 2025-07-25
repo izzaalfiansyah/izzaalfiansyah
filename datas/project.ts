@@ -12,11 +12,40 @@ export const projects: Project[] = [
   {
     name: "Knowledge Management System",
     description:
-      "Belajar bersama Badiklat Kemhan. Knowledge Management System adalah platform pembelajaran jarah jauh dan merdeka belajar online dari Badiklat Kemhan RI, yang membantu pengajar membuat diklat dan materi sehingga siswa dapat belajar di dalamnya",
+      "Belajar bersama Badiklat Kemhan. Knowledge Management System adalah platform pembelajaran jarah jauh dan merdeka belajar online dari Badiklat Kemhan RI, yang membantu pengajar membuat diklat dan materi sehingga siswa dapat belajar di dalamnya.",
     team: true,
     language: ["Laravel", "Alpine JS"],
     photo: ["lms.png", "lms2.png", "lms3.png", "lms4.png", "lms5.png"],
     link: "https://lms-staging.oriens.my.id",
+  },
+  {
+    name: "Oriens",
+    description:
+      "OriensCRM adalah productivity tools yang membantu tim dalam mengelola proyek, tugas, dan kolaborasi. Dengan fitur-fitur seperti manajemen job, pelacakan waktu, integrasi dengan berbagai aplikasi, automation, laporan analitik, dan lainnya.",
+    team: true,
+    language: ["Express", "Vue", "Vuetify", "Flutter"],
+    photo: ["oriens.png", "oriens2.png", "oriens3.png", "oriens4.png"],
+    link: "https://dev.oriens.my.id",
+  },
+  {
+    name: "Vitalmetrics",
+    description: "Platform kalkulator BMI berbasis Internet of Things",
+    team: false,
+    language: ["Arduino", "Flutter"],
+    photo: ["vitalmetrics.png"],
+  },
+  {
+    name: "Aset Tanah Polda",
+    description: "Sistem pengelolaan tanah polda dan wilayah",
+    team: false,
+    language: ["Laravel"],
+    photo: [
+      "tanah-polda.png",
+      "tanah-polda2.png",
+      "tanah-polda3.png",
+      "tanah-polda4.png",
+      "tanah-polda5.png",
+    ],
   },
   {
     name: "Vitalmetrics",
