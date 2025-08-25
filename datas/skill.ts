@@ -33,18 +33,6 @@ export const skills: Skill[] = [
     title: "Tailwind",
   },
   {
-    icon: "https://raw.githubusercontent.com/gilbarbara/logos/master/logos/codeigniter-icon.svg",
-    title: "Codeigniter",
-  },
-  {
-    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/985px-Laravel.svg.png",
-    title: "Laravel",
-  },
-  {
-    icon: "https://img.icons8.com/office40/512/express-js.png",
-    title: "ExpressJS",
-  },
-  {
     icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
     title: "React",
   },
@@ -57,11 +45,43 @@ export const skills: Skill[] = [
     title: "Svelte",
   },
   {
-    icon: "https://www.solidjs.com/img/logo/without-wordmark/logo.png",
-    title: "Solid",
+    icon: "https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png",
+    title: "Go",
+  },
+  {
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/985px-Laravel.svg.png",
+    title: "Laravel",
+  },
+  {
+    icon: "https://img.icons8.com/office40/512/express-js.png",
+    title: "ExpressJS",
+  },
+  {
+    icon: "https://nestjs.com/img/logo-small.svg",
+    title: "NestJS",
+  },
+  {
+    icon: "https://nuxt.com/assets/design-kit/icon-green.svg",
+    title: "Nuxt",
   },
   {
     icon: "https://assets.website-files.com/60d251a34163cf29e1220806/626accd8eefaec54f23310ba_flutter%20developer%20logo.png",
     title: "Flutter",
+  },
+  {
+    icon: "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png",
+    title: "Docker",
+  },
+  {
+    icon: "https://cdn-icons-png.flaticon.com/512/5968/5968313.png",
+    title: "MySql",
+  },
+  {
+    icon: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
+    title: "MongoDB",
+  },
+  {
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/1200px-GraphQL_Logo.svg.png",
+    title: "GraphQL",
   },
 ];
