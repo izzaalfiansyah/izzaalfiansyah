@@ -1,87 +1,28 @@
-# Muhammad Izza Alfiansyah - Portfolio
+# Muhammad Izza Alfiansyah
 
-A personal portfolio website built with Nuxt.js showcasing projects, career experience, skills, and contact information.
+Hi, I'm Muhammad Izza Alfiansyah. I graduated with a Diploma in Information Technology from Politeknik Negeri Jember. My programming journey began in vocational high school at SMK PGRI 5 Jember, majoring in Software Engineering. I am passionate about developing dynamic, responsive web and mobile software. I am always excited by the rapid advancement of technology and eager to be a part of it.
 
-## Features
+---
 
-- **About Page**: Personal introduction and background
-- **Career Page**: Professional experience and timeline
-- **Projects Page**: Showcase of completed projects with images and descriptions
-- **Contact Page**: Contact information and social links
-- **Responsive Design**: Optimized for all devices
-- **SEO Optimized**: Meta tags and structured data
+## 📊 GitHub Stats
 
-## Tech Stack
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=izzaalfiansyah&show_icons=true&hide_title=true&hide_rank=true&hide_border=true&theme=calm" alt="GitHub Stats" />
+  <br>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=izzaalfiansyah&hide_border=true&theme=calm" alt="GitHub Streak" />
+</p>
 
-- **Framework**: Nuxt.js 3
-- **UI Library**: @nuxt/ui
-- **Styling**: TailwindCSS
-- **Animations**: Nuxt AOS
-- **Image Optimization**: @nuxt/image
-- **Language**: TypeScript
+---
 
-## Getting Started
+## 🤝 Let's Collaborate!
 
-### Prerequisites
+<p align="center">
+  <a href="https://www.linkedin.com/in/muhammad-izza-alfiansyah-76a473220/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin" alt="LinkedIn" />
+  </a>
+  <a href="https://www.instagram.com/izzaalfiansyah_/" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+  </a>
+</p>
 
-- Node.js (version 18 or higher)
-- Yarn package manager
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/izzaalfiansyah/izzaalfiansyah.git
-cd izzaalfiansyah
-```
-
-2. Install dependencies:
-```bash
-yarn install
-```
-
-3. Run the development server:
-```bash
-yarn dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Build for Production
-
-```bash
-yarn build
-```
-
-### Preview Production Build
-
-```bash
-yarn preview
-```
-
-### Generate Static Site
-
-```bash
-yarn generate
-```
-
-## Project Structure
-
-```
-├── assets/          # Static assets
-├── components/      # Vue components
-├── datas/           # Data files (career, contact, etc.)
-├── layouts/         # Page layouts
-├── pages/           # Application pages
-├── public/          # Public assets and images
-├── server/          # Server-side code
-└── utils/           # Utility functions
-```
-
-## Contributing
-
-This is a personal portfolio project. Contributions are welcome for improvements and bug fixes.
-
-## License
-
-This project is private and not licensed for public use.
+---
