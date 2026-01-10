@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { careers } from "~/datas/career";
+import moment from "moment";
 
 const isOdd = (index: number) => index % 2 === 0;
 
@@ -15,27 +16,22 @@ const description = "Let me share you some of my experience";
     </div>
     <div class="mt-20 space-y-10">
       <template v-for="(career, i) in careers">
-        <div
-          class="flex md:flex-row flex-col md:items-stretch"
-          :class="isOdd(i) ? 'md:flex-row-reverse items-start' : 'items-end'"
-        >
-          <img
-            :src="career.image"
-            alt=""
+        <div class="flex md:flex-row flex-col md:items-stretch"
+          :class="isOdd(i) ? 'md:flex-row-reverse items-start' : 'items-end'">
+          <img :src="career.image" alt=""
             class="md:size-56 sm:size-32 size-24 md:rounded rounded-full object-cover md:mb-0 mb-5"
-            :data-aos="isOdd(i) ? 'fade-right' : 'fade-left'"
-          />
+            :data-aos="isOdd(i) ? 'fade-right' : 'fade-left'" />
           <div
             class="grow md:w-auto w-full min-w-0 flex flex-col justify-center from-primary/15 to-transparent rounded-lg p-8"
             :class="isOdd(i) ? 'bg-gradient-to-r' : 'bg-gradient-to-l'"
-            :data-aos="isOdd(i) ? 'fade-right' : 'fade-left'"
-          >
+            :data-aos="isOdd(i) ? 'fade-right' : 'fade-left'">
             <div>
               <div class="md:text-3xl text-2xl font-bold">
                 {{ career.company }}
               </div>
               <div class="text-primary mt-3">{{ career.position }}</div>
-              <div class="text-sm">{{ career.date }}</div>
+              <div class="text-sm">{{ moment(career.start_date).format("MMM YYYY") }} - {{ career.end_date ?
+                moment(career.end_date).format('MMM YYYY') : 'Now' }}</div>
             </div>
           </div>
         </div>
