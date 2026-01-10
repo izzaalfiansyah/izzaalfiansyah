@@ -38,4 +38,7 @@ const description = "Let me share you some of my experience";
       </template>
     </div>
   </div>
+  <div class="mt-20">
+    <InterestTogether />
+  </div>
 </template>
