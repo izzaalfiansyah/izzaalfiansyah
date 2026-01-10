@@ -6,12 +6,12 @@ interface Link {
 
 const links: Link[] = [
   {
-    name: "Uses",
-    path: "/uses",
-  },
-  {
     name: "About",
     path: "/about",
+  },
+  {
+    name: "Uses",
+    path: "/uses",
   },
   {
     name: "Career",
