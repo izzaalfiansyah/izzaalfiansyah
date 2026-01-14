@@ -24,8 +24,10 @@ const project = projects.find((p) => p.slug == slug)!;
     </div>
     <div class="mt-10" data-aos="fade-left">
       <div class="text-2xl font-semibold">Tech Used:</div>
-      <div>
-        {{ project.language.join(", ") }}
+      <div class="flex items-center flex-wrap gap-2 mt-1">
+        <div v-for="stack in project.stacks" class="px-2.5 py-0.5 rounded border border-primary/20 bg-primary/5">
+          {{ stack }}
+        </div>
       </div>
     </div>
     <div v-if="!!project.as" class="mt-10" data-aos="fade-left">
