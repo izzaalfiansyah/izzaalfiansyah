@@ -11,6 +11,26 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
+		name: "Talent Management Analysis",
+		description:
+			"intelligent analytical feature developed using a Large Language Model (LLM) with a Retrieval-Augmented Generation (RAG) approach to analyze data stored in the Human Resources system.",
+		team: true,
+		language: ["FastAPI", "Milvus", "LlamaIndex", "Paddle OCR", "LLM"],
+		photo: ["hris-ai.jpg", "hris-ai-2.jpg", "hris-ai-3.jpg"],
+		link: "https://hris-ai.oriens.my.id/docs",
+		as: "AI Engineer",
+	},
+	{
+		name: "Human Resources",
+		description:
+			"Digital platform developed to manage and streamline HR operations within organizations. This system help to handle employee data, recruitment process, work targets, retention analysis, leave management, and performance tracking. It also provides tools for training and development, performance appraisal, and employee feedback.",
+		team: true,
+		language: ["Nuxt", "Tailwind", "Express", "GraphQL"],
+		photo: ["hris.jpg", "hris-2.jpg", "hris-3.jpg"],
+		link: "https://hris.oriens.my.id",
+		as: "Full Stack Developer",
+	},
+	{
 		name: "Knowledge Management System",
 		description:
 			"Belajar bersama Badiklat Kemhan. Knowledge Management System adalah platform pembelajaran jarah jauh dan merdeka belajar online dari Badiklat Kemhan RI, yang membantu pengajar membuat diklat dan materi sehingga siswa dapat belajar di dalamnya.",
@@ -25,7 +45,7 @@ export const projects: Project[] = [
 		description:
 			"OriensCRM adalah productivity tools yang membantu tim dalam mengelola proyek, tugas, dan kolaborasi. Dengan fitur-fitur seperti manajemen job, pelacakan waktu, integrasi dengan berbagai aplikasi, automation, laporan analitik, dan lainnya.",
 		team: true,
-		language: ["Express", "Vue", "Vuetify", "Flutter"],
+		language: ["Express", "Vue", "Vuetify", "Flutter", "GraphQL"],
 		photo: ["oriens.png", "oriens2.png", "oriens3.png", "oriens4.png"],
 		link: "https://dev.oriens.my.id",
 		as: "Front End Developer, Mobile Flutter Developer",
