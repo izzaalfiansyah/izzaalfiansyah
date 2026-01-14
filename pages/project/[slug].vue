@@ -12,15 +12,10 @@ const project = projects.find((p) => p.slug == slug)!;
   <div class="py-10">
     <div
       class="overflow-x-auto flex max-w-full no-scrollbar space-x-6 p-5 bg-gradient-to-t from-primary/10 to-transparent rounded-lg"
-      :class="{ 'justify-center': project.photo.length == 1 }"
-    >
+      :class="{ 'justify-center': project.photo.length == 1 }">
       <template v-for="photo in project.photo">
-        <img
-          :src="`/projects/${photo}`"
-          alt=""
-          class="md:w-[80%] w-[90%] h-full rounded-lg"
-          data-aos="fade-left"
-        />
+        <img :src="`/projects/${photo}`" alt="" class="md:h-[45vh]! max-w-[90%] h-[30vh]! object-cover rounded-lg"
+          data-aos="fade-left" />
       </template>
     </div>
     <div class="mt-10" data-aos="fade-left">
@@ -33,14 +28,18 @@ const project = projects.find((p) => p.slug == slug)!;
         {{ project.language.join(", ") }}
       </div>
     </div>
-    <template v-if="!!project.link">
-      <div class="mt-10" data-aos="fade-left">
-        <div class="text-2xl font-semibold">Demo:</div>
-        <a :href="project.link" class="text-primary" target="_blank">{{
-          project.link
-        }}</a>
+    <div v-if="!!project.as" class="mt-10" data-aos="fade-left">
+      <div class="text-2xl font-semibold">Project Role:</div>
+      <div>
+        {{ project.as }}
       </div>
-    </template>
+    </div>
+    <div v-if="!!project.link" class="mt-10" data-aos="fade-left">
+      <div class="text-2xl font-semibold">Demo:</div>
+      <a :href="project.link" class="text-primary" target="_blank">
+        {{ project.link }}
+      </a>
+    </div>
     <div class="mt-10">
       <InterestTogether />
     </div>
