@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap");
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --color-primary: #2fcafb;
+    --color-background: #ffffff;
+    --color-border: #e5e7eb;
+    --color-foreground: #111111;
+}
+
+.dark {
+    --color-primary: #2fcafb;
+    --color-background: #000000;
+    --color-border: #1f2937;
+    --color-foreground: #ffffff;
+}
+
+@theme {
+    --default-font-family: "National Park", sans-serif;
+
+    --color-primary: var(--color-primary);
+    --color-background: var(--color-background);
+    --color-border: var(--color-border);
+    --color-foreground: var(--color-foreground);
+}
+
+html,
+body {
+    @apply bg-background text-foreground;
+}
+
+* {
+    @apply border-border;
+}
