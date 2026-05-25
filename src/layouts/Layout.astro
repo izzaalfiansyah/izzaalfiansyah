@@ -1,24 +1,38 @@
 ---
-import "@/styles/global.css";
-import { ClientRouter } from "astro:transitions";
+import "@/styles/global.css"
+import { ClientRouter } from "astro:transitions"
+
+type Meta = "description" | "keywords" | string
+
+interface Props {
+  title?: string
+  meta?: Record<Meta, string>
+}
+
+const { title, meta } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
 
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
 
     <script src="../scripts/global.js"></script>
 
-		<title>Astro Basics</title>
+    <title>{title ? `${title} |` : ""}{" Muhammad Izza Alfiansyah"}</title>
+
+    {
+      meta &&
+        Object.keys(meta).map((key) => <meta name={key} content={meta[key]} />)
+    }
 
     <ClientRouter />
-	</head>
+  </head>
 
   <body>
     <slot />

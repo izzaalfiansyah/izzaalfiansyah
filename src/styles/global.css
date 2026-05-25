@@ -5,33 +5,33 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-    --color-primary: #2fcafb;
-    --color-background: #ffffff;
-    --color-border: #e5e7eb;
-    --color-foreground: #111111;
+  --color-primary: #2fcafb;
+  --color-background: #ffffff;
+  --color-border: #e5e7eb;
+  --color-foreground: #111111;
 }
 
 .dark {
-    --color-primary: #2fcafb;
-    --color-background: #000000;
-    --color-border: #1f2937;
-    --color-foreground: #ffffff;
+  --color-primary: #2fcafb;
+  --color-background: #000000;
+  --color-border: #1f2937;
+  --color-foreground: #ffffff;
 }
 
 @theme {
-    --default-font-family: "National Park", sans-serif;
+  --default-font-family: "National Park", sans-serif;
 
-    --color-primary: var(--color-primary);
-    --color-background: var(--color-background);
-    --color-border: var(--color-border);
-    --color-foreground: var(--color-foreground);
+  --color-primary: var(--color-primary);
+  --color-background: var(--color-background);
+  --color-border: var(--color-border);
+  --color-foreground: var(--color-foreground);
 }
 
 html,
 body {
-    @apply bg-background text-foreground;
+  @apply bg-background text-foreground;
 }
 
 * {
-    @apply border-border;
+  @apply border-border;
 }
