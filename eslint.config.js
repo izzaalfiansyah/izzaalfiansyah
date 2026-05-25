@@ -4,20 +4,8 @@ import ts from "typescript-eslint"
 import prettierConfig from "eslint-config-prettier/flat"
 
 const config = defineConfig([
-  {
-    files: ["**/*.ts"],
-    plugins: {
-      ts,
-    },
-    extends: ["ts/recommended"],
-  },
-  {
-    files: ["**/*.js"],
-    plugins: {
-      js,
-    },
-    extends: ["js/recommended"],
-  },
+  js.configs.recommended,
+  ...ts.configs.recommended,
   prettierConfig,
 ])
 
