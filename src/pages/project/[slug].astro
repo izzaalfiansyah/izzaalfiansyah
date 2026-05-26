@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro"
 import { getCollection, render } from "astro:content"
 import { ChevronLeft, ChevronRight, Github, ExternalLink } from "@lucide/astro"
+import InterestedWithMe from "@/components/InterestedWithMe.astro"
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects")
@@ -164,6 +165,8 @@ const { title, images, tags, links } = entry.data
       <div class="prose prose-sm dark:prose-invert max-w-none space-y-3">
         <Content />
       </div>
+
+      <InterestedWithMe />
     </div>
   </div>
 </Layout>

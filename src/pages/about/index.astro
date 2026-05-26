@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import { techstack } from "@/data/techstack"
+import InterestedWithMe from "@/components/InterestedWithMe.astro"
 ---
 
 <Layout
@@ -27,7 +28,11 @@ import { techstack } from "@/data/techstack"
 
       <div class="space-y-4">
         <div>
-          <p class="text-sm font-medium text-primary uppercase tracking-widest mb-2">About Me</p>
+          <p
+            class="text-sm font-medium text-primary uppercase tracking-widest mb-2"
+          >
+            About Me
+          </p>
           <h1 class="text-3xl font-bold tracking-tight md:text-4xl">
             Muhammad Izza Alfiansyah
           </h1>
@@ -46,9 +51,9 @@ import { techstack } from "@/data/techstack"
           </p>
           <p>
             I started programming when I was in high school at{" "}
-            <strong class="text-foreground">SMK PGRI 5 Jember</strong>, The
-            most meritorious place in my ability development. I am very
-            enthusiastic about learning new things in the world of technology.
+            <strong class="text-foreground">SMK PGRI 5 Jember</strong>, The most
+            meritorious place in my ability development. I am very enthusiastic
+            about learning new things in the world of technology.
           </p>
         </div>
 
@@ -76,7 +81,9 @@ import { techstack } from "@/data/techstack"
         Technologies I work with on a daily basis
       </p>
 
-      <div class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+      <div
+        class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6"
+      >
         {
           techstack.map((tech) => (
             <div class="group flex flex-col items-center gap-2 rounded-xl border p-4 transition-all hover:border-primary/50 hover:bg-primary/5">
@@ -97,18 +104,6 @@ import { techstack } from "@/data/techstack"
       </div>
     </div>
 
-    <!-- CTA Section -->
-    <div class="mt-16 rounded-2xl border border-primary/20 bg-primary/5 p-8 text-center">
-      <h3 class="text-xl font-bold">Are you interested?</h3>
-      <p class="mt-2 text-foreground/60">
-        Contact me! Let's work together. We will make something unbelievable.
-      </p>
-      <a
-        href="/contact"
-        class="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
-      >
-        Collaborate With Me
-      </a>
-    </div>
+    <InterestedWithMe />
   </div>
 </Layout>
