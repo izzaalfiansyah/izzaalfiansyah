@@ -27,7 +27,8 @@ const currentPath = Astro.url.pathname
       izzaalfiansyah
     </a>
 
-    <div class="flex items-center gap-1">
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-1">
       {
         paths.map((p) => (
           <a
@@ -46,5 +47,107 @@ const currentPath = Astro.url.pathname
 
       <ThemeToggler />
     </div>
+
+    <!-- Mobile / iPad right side -->
+    <div class="flex md:hidden items-center gap-2">
+      <!-- Hamburger button -->
+      <button
+        id="mobile-menu-toggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        class="rounded-md p-2 text-foreground/60 hover:text-foreground hover:bg-accent transition-colors"
+      >
+        <!-- Icon: hamburger -->
+        <svg
+          id="icon-menu"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+
+        <!-- Icon: close -->
+        <svg
+          id="icon-close"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 hidden"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile dropdown menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t bg-background/95 backdrop-blur-sm"
+  >
+    <div class="mx-auto max-w-4xl flex flex-col px-6 py-3 gap-1">
+      {
+        paths.map((p) => (
+          <a
+            href={p.path}
+            class:list={[
+              "rounded-md px-3 py-2 text-sm transition-colors",
+              currentPath.startsWith(p.path)
+                ? "text-primary font-medium bg-accent/50"
+                : "text-foreground/60 hover:text-foreground hover:bg-accent",
+            ]}
+          >
+            {p.name}
+          </a>
+        ))
+      }
+      <ThemeToggler />
+    </div>
   </div>
 </nav>
+
+<script>
+  const toggle = document.getElementById("mobile-menu-toggle")
+  const menu = document.getElementById("mobile-menu")
+  const iconMenu = document.getElementById("icon-menu")
+  const iconClose = document.getElementById("icon-close")
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = !menu?.classList.contains("hidden")
+
+    if (isOpen) {
+      menu?.classList.add("hidden")
+      iconMenu?.classList.remove("hidden")
+      iconClose?.classList.add("hidden")
+      toggle.setAttribute("aria-expanded", "false")
+    } else {
+      menu?.classList.remove("hidden")
+      iconMenu?.classList.add("hidden")
+      iconClose?.classList.remove("hidden")
+      toggle.setAttribute("aria-expanded", "true")
+    }
+  })
+
+  // Tutup menu saat klik di luar navbar
+  document.addEventListener("click", (e) => {
+    const nav = document.querySelector("nav")
+    if (!nav?.contains(e.target as Node)) {
+      menu?.classList.add("hidden")
+      iconMenu?.classList.remove("hidden")
+      iconClose?.classList.add("hidden")
+      toggle?.setAttribute("aria-expanded", "false")
+    }
+  })
+</script>
