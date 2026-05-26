@@ -1,15 +1,19 @@
 ---
 import "@/styles/global.css"
 import { ClientRouter } from "astro:transitions"
+import Navbar from "@/components/Navbar.astro"
+import Footer from "@/components/Footer.astro"
 
 type Meta = "description" | "keywords" | string
 
 interface Props {
   title?: string
   meta?: Record<Meta, string>
+  hideNav?: boolean
+  hideFooter?: boolean
 }
 
-const { title, meta } = Astro.props
+const { title, meta, hideNav = false, hideFooter = false } = Astro.props
 ---
 
 <!doctype html>
@@ -34,7 +38,11 @@ const { title, meta } = Astro.props
     <ClientRouter />
   </head>
 
-  <body>
-    <slot />
+  <body class="flex min-h-screen flex-col">
+    {!hideNav && <Navbar />}
+    <main class="flex-1">
+      <slot />
+    </main>
+    {!hideFooter && <Footer />}
   </body>
 </html>
