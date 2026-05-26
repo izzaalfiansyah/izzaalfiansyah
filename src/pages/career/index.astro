@@ -1,0 +1,85 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import { careers } from "@/data/career"
+---
+
+<Layout
+  title="Career"
+  meta={{
+    description:
+      "Career history of Muhammad Izza Alfiansyah - Full Stack & Mobile Flutter Developer.",
+  }}
+>
+  <div class="mx-auto max-w-4xl px-6 py-16">
+    <div class="mb-12">
+      <p class="text-sm font-medium text-primary uppercase tracking-widest mb-2">
+        Experience
+      </p>
+      <h1 class="text-3xl font-bold tracking-tight md:text-4xl">Career</h1>
+      <p class="mt-2 text-foreground/60">
+        Let me share you some of my experience
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- vertical line -->
+      <div
+        class="absolute left-5 top-0 h-full w-px bg-border md:left-8"
+      ></div>
+
+      <div class="space-y-8">
+        {
+          careers.map((job, i) => (
+            <div class="relative flex gap-6 md:gap-10">
+              <!-- dot -->
+              <div class="relative z-10 flex shrink-0 items-start pt-1">
+                <div
+                  class:list={[
+                    "flex size-10 items-center justify-center overflow-hidden rounded-full border-2 bg-background md:size-16",
+                    job.current
+                      ? "border-primary shadow-sm shadow-primary/20"
+                      : "border-border",
+                  ]}
+                >
+                  <img
+                    src={job.logo}
+                    alt={job.company}
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              <!-- content -->
+              <div
+                class:list={[
+                  "flex-1 rounded-xl border p-5 transition-colors",
+                  job.current
+                    ? "border-primary/30 bg-primary/5"
+                    : "hover:border-foreground/20",
+                ]}
+              >
+                <div class="flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <h3 class="font-semibold text-foreground">{job.company}</h3>
+                    <p class="mt-0.5 text-sm text-primary">{job.role}</p>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    {job.current && (
+                      <span class="inline-flex items-center gap-1.5 rounded-full bg-primary/20 px-2.5 py-0.5 text-xs font-medium text-primary">
+                        <span class="size-1.5 animate-pulse rounded-full bg-primary" />
+                        Current
+                      </span>
+                    )}
+                    <span class="text-xs text-foreground/50">{job.period}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>
