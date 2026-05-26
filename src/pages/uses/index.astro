@@ -1,0 +1,84 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import { usesCategories } from "@/data/uses"
+---
+
+<Layout
+  title="Uses"
+  meta={{
+    description:
+      "Tools and setup used by Muhammad Izza Alfiansyah for coding and productivity.",
+  }}
+>
+  <div class="mx-auto max-w-4xl px-6 py-16">
+    <div class="mb-12">
+      <p class="text-sm font-medium text-primary uppercase tracking-widest mb-2">
+        Setup
+      </p>
+      <h1 class="text-3xl font-bold tracking-tight md:text-4xl">Uses</h1>
+      <p class="mt-2 text-foreground/60">
+        A curated list of the tools and setup I use to build, code, and
+        maintain a productive workflow.
+      </p>
+    </div>
+
+    <!-- Desktop illustration -->
+    <div class="mb-12 overflow-hidden rounded-2xl border bg-foreground/5">
+      <img
+        src="https://izzaalfiansyah.my.id/_nuxt/desktop.tt8b0Lr9.png"
+        alt="My desktop setup"
+        class="w-full object-cover"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Categories -->
+    <div class="space-y-12">
+      {
+        usesCategories.map((category) => (
+          <div>
+            <h2 class="mb-4 text-lg font-bold text-foreground">
+              {category.title}
+            </h2>
+            <div class="space-y-3">
+              {category.items.map((item) => (
+                <div class="group flex items-start gap-4 rounded-xl border p-4 transition-all hover:border-primary/40 hover:bg-primary/5">
+                  <div class="mt-0.5 size-2 shrink-0 rounded-full bg-primary/60 group-hover:bg-primary" />
+                  <div class="flex-1 min-w-0">
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="font-medium hover:text-primary transition-colors"
+                    >
+                      {item.name}
+                    </a>
+                    <p class="mt-0.5 text-sm text-foreground/60">
+                      {item.description}
+                    </p>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="mt-1 shrink-0 text-foreground/30 group-hover:text-foreground/60 transition-colors"
+                  >
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" x2="21" y1="14" y2="3" />
+                  </svg>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
