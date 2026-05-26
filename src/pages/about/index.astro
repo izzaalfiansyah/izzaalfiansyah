@@ -1,5 +1,114 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import { techstack } from "@/data/techstack"
 ---
 
-<Layout title="About Me"> This is about page </Layout>
+<Layout
+  title="About Me"
+  meta={{
+    description:
+      "About Muhammad Izza Alfiansyah - Full Stack & Mobile Flutter Developer based in Jember, East Java, Indonesia.",
+  }}
+>
+  <div class="mx-auto max-w-4xl px-6 py-16">
+    <!-- Profile Section -->
+    <div class="mb-16 flex flex-col gap-8 md:flex-row md:gap-12">
+      <div class="shrink-0">
+        <div
+          class="size-36 overflow-hidden rounded-2xl border-2 border-primary/20 md:size-48"
+        >
+          <img
+            src="https://izzaalfiansyah.my.id/_nuxt/about.O-Ekh4Sx.png"
+            alt="Muhammad Izza Alfiansyah"
+            class="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <p class="text-sm font-medium text-primary uppercase tracking-widest mb-2">About Me</p>
+          <h1 class="text-3xl font-bold tracking-tight md:text-4xl">
+            Muhammad Izza Alfiansyah
+          </h1>
+          <p class="mt-1 text-foreground/60">
+            Full Stack &amp; Mobile Flutter Developer
+          </p>
+        </div>
+
+        <div class="space-y-3 text-foreground/70 leading-relaxed">
+          <p>
+            Hello! My Name is Muhammad Izza Alfiansyah and you can call me
+            <strong class="text-foreground">Alfian</strong>. I am a Full Stack
+            &amp; Mobile Flutter Developer at{" "}
+            <strong class="text-foreground">ERA Indonesia</strong>. I Live in
+            Jember Regency, East Java Indonesia.
+          </p>
+          <p>
+            I started programming when I was in high school at{" "}
+            <strong class="text-foreground">SMK PGRI 5 Jember</strong>, The
+            most meritorious place in my ability development. I am very
+            enthusiastic about learning new things in the world of technology.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2 pt-2">
+          <a
+            href="/contact"
+            class="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-black transition-opacity hover:opacity-90"
+          >
+            Contact Me
+          </a>
+          <a
+            href="/project"
+            class="inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-semibold transition-colors hover:border-primary/50 hover:text-primary"
+          >
+            View Projects
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Stack Section -->
+    <div>
+      <h2 class="mb-2 text-2xl font-bold tracking-tight">Tech Stack</h2>
+      <p class="mb-8 text-foreground/50 text-sm">
+        Technologies I work with on a daily basis
+      </p>
+
+      <div class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+        {
+          techstack.map((tech) => (
+            <div class="group flex flex-col items-center gap-2 rounded-xl border p-4 transition-all hover:border-primary/50 hover:bg-primary/5">
+              <div class="size-8 shrink-0">
+                <img
+                  src={tech.icon}
+                  alt={tech.name}
+                  class="h-full w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <span class="text-center text-xs text-foreground/60 group-hover:text-foreground">
+                {tech.name}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-16 rounded-2xl border border-primary/20 bg-primary/5 p-8 text-center">
+      <h3 class="text-xl font-bold">Are you interested?</h3>
+      <p class="mt-2 text-foreground/60">
+        Contact me! Let's work together. We will make something unbelievable.
+      </p>
+      <a
+        href="/contact"
+        class="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
+      >
+        Collaborate With Me
+      </a>
+    </div>
+  </div>
+</Layout>
