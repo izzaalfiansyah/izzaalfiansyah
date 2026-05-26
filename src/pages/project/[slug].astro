@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import { getCollection, render } from "astro:content"
-import { ChevronLeft, Github, ExternalLink } from "@lucide/astro"
+import { ChevronLeft, ChevronRight, Github, ExternalLink } from "@lucide/astro"
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects")
@@ -19,7 +19,7 @@ const { title, images, tags, links } = entry.data
 <Layout
   title={title}
   meta={{
-    description: entry.body?.replace(/\n/g, " ").slice(0, 160),
+    description: entry.body?.replace(/\n/g, " ").slice(0, 160) || "",
   }}
 >
   <div class="mx-auto max-w-4xl px-6 py-16">
@@ -32,13 +32,84 @@ const { title, images, tags, links } = entry.data
       Back to Projects
     </a>
 
-    <!-- Project Image -->
-    <div class="mb-8 overflow-hidden rounded-2xl border bg-foreground/5">
-      <img
-        src={images}
-        alt={title}
-        class="h-auto w-full object-cover"
-      />
+    <!-- Carousel -->
+    <div
+      class="mb-8 overflow-hidden rounded-2xl border bg-foreground/5"
+      id="carousel-wrapper"
+    >
+      <div class="relative select-none">
+        <!-- Track -->
+        <div
+          id="carousel-track"
+          class="flex transition-transform duration-300 ease-in-out"
+          style="will-change: transform;"
+        >
+          {
+            images.map((src, i) => (
+              <div class="min-w-full">
+                <img
+                  src={src}
+                  alt={`${title} – screenshot ${i + 1}`}
+                  class="h-auto max-h-[520px] w-full object-cover"
+                  draggable="false"
+                />
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- Prev / Next buttons (only render when more than 1 image) -->
+        {
+          images.length > 1 && (
+            <>
+              <button
+                id="carousel-prev"
+                aria-label="Previous image"
+                class="absolute left-3 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/60 focus-visible:outline-none cursor-pointer"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                id="carousel-next"
+                aria-label="Next image"
+                class="absolute right-3 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/60 focus-visible:outline-none cursor-pointer"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </>
+          )
+        }
+
+        <!-- Dot indicators -->
+        {
+          images.length > 1 && (
+            <div
+              id="carousel-dots"
+              class="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5"
+            >
+              {images.map((_, i) => (
+                <button
+                  data-index={i}
+                  aria-label={`Go to image ${i + 1}`}
+                  class="carousel-dot h-1.5 w-1.5 rounded-full bg-white/40 transition-all duration-200 focus-visible:outline-none"
+                />
+              ))}
+            </div>
+          )
+        }
+
+        <!-- Slide counter -->
+        {
+          images.length > 1 && (
+            <span
+              id="carousel-counter"
+              class="pointer-events-none absolute right-3 bottom-3 rounded-md bg-black/50 px-2 py-0.5 text-xs text-white/80 backdrop-blur-sm"
+            >
+              1 / {images.length}
+            </span>
+          )
+        }
+      </div>
     </div>
 
     <!-- Project Info -->
@@ -90,9 +161,113 @@ const { title, images, tags, links } = entry.data
       </div>
 
       <!-- Description -->
-      <div class="prose prose-sm dark:prose-invert max-w-none">
+      <div class="prose prose-sm dark:prose-invert max-w-none space-y-3">
         <Content />
       </div>
     </div>
   </div>
 </Layout>
+
+<script>
+  function slideImage() {
+    const track = document.getElementById(
+      "carousel-track"
+    ) as HTMLElement | null
+    const prevBtn = document.getElementById(
+      "carousel-prev"
+    ) as HTMLButtonElement | null
+    const nextBtn = document.getElementById(
+      "carousel-next"
+    ) as HTMLButtonElement | null
+    const dotsContainer = document.getElementById(
+      "carousel-dots"
+    ) as HTMLElement | null
+    const counter = document.getElementById(
+      "carousel-counter"
+    ) as HTMLElement | null
+
+    if (!track) throw new Error("carousel-track not found")
+
+    const slides = track.querySelectorAll<HTMLElement>(".min-w-full")
+    const total = slides.length
+    let current = 0
+
+    const dots = dotsContainer
+      ? Array.from(
+          dotsContainer.querySelectorAll<HTMLButtonElement>(".carousel-dot")
+        )
+      : []
+
+    function goTo(index: number) {
+      current = (index + total) % total
+      track!.style.transform = `translateX(-${current * 100}%)`
+      dots.forEach((d, i) => {
+        d.classList.toggle("bg-white", i === current)
+        d.classList.toggle("w-3", i === current)
+        d.classList.toggle("bg-white/40", i !== current)
+        d.classList.toggle("w-1.5", i !== current)
+      })
+      if (counter) counter.textContent = `${current + 1} / ${total}`
+    }
+
+    // Init dots
+    goTo(0)
+
+    prevBtn?.addEventListener("click", () => goTo(current - 1))
+    nextBtn?.addEventListener("click", () => goTo(current + 1))
+
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => goTo(Number(dot.dataset.index)))
+    })
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") goTo(current - 1)
+      if (e.key === "ArrowRight") goTo(current + 1)
+    })
+
+    // Touch / drag swipe
+    let startX = 0
+    let isDragging = false
+
+    track.addEventListener("pointerdown", (e) => {
+      startX = e.clientX
+      isDragging = true
+      track.style.transition = "none"
+      track.setPointerCapture(e.pointerId)
+    })
+
+    track.addEventListener("pointermove", (e) => {
+      if (!isDragging) return
+      const diff = e.clientX - startX
+      const base = -current * 100
+      track.style.transform = `translateX(calc(${base}% + ${diff}px))`
+    })
+
+    track.addEventListener("pointerup", (e) => {
+      if (!isDragging) return
+      isDragging = false
+      track.style.transition = "transform 300ms ease-in-out"
+      const diff = e.clientX - startX
+      const threshold = track.offsetWidth * 0.2
+      if (diff < -threshold) goTo(current + 1)
+      else if (diff > threshold) goTo(current - 1)
+      else goTo(current)
+    })
+
+    track.addEventListener("pointercancel", () => {
+      isDragging = false
+      track.style.transition = "transform 300ms ease-in-out"
+      goTo(current)
+    })
+  }
+
+  slideImage()
+
+  document.addEventListener("astro:after-swap", () => {
+    const path = window.location.pathname
+    if (path.includes("/project/")) {
+      slideImage()
+    }
+  })
+</script>
