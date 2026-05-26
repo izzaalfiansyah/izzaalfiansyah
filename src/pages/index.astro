@@ -1,7 +1,152 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "@/layouts/Layout.astro"
+import { projects } from "@/data/projects"
+
+const featured = projects.slice(0, 4)
 ---
 
-<Layout>
-  <a href="/about">About Page</a>
+<Layout
+  meta={{
+    description:
+      "Muhammad Izza Alfiansyah - Full Stack & Mobile Flutter Developer based in Jember, East Java, Indonesia.",
+    keywords: "Full Stack Developer, Mobile Flutter Developer, Portfolio",
+  }}
+>
+  <!-- Hero Section -->
+  <section class="mx-auto max-w-4xl px-6 py-24 md:py-32">
+    <div class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+        >
+          <span class="size-1.5 animate-pulse rounded-full bg-primary"></span>
+          Available for work
+        </span>
+      </div>
+
+      <h1 class="text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+        Hi, I'm{" "}
+        <span
+          class="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"
+        >
+          Muhammad Izza
+        </span>
+      </h1>
+
+      <p class="max-w-xl text-lg text-foreground/60 md:text-xl">
+        Full Stack &amp; Mobile Flutter Developer. Building digital experiences
+        that are fast, elegant, and meaningful.
+      </p>
+
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <a
+          href="/project"
+          class="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
+        >
+          View Projects
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path>
+          </svg>
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 rounded-lg border px-5 py-2.5 text-sm font-semibold transition-colors hover:border-primary/50 hover:text-primary"
+        >
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="mx-auto max-w-4xl px-6 pb-24">
+    <div class="mb-8 flex items-center justify-between">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">Featured Projects</h2>
+        <p class="mt-1 text-sm text-foreground/50">
+          A selection of my recent work
+        </p>
+      </div>
+      <a
+        href="/project"
+        class="text-sm text-primary hover:underline"
+      >
+        View all →
+      </a>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      {
+        featured.map((project) => (
+          <a
+            href={`/project/${project.slug}`}
+            class="group overflow-hidden rounded-xl border bg-background transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+          >
+            <div class="aspect-video w-full overflow-hidden bg-foreground/5">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold">{project.title}</h3>
+              <p class="mt-1 line-clamp-2 text-sm text-foreground/60">
+                {project.description}
+              </p>
+              <div class="mt-3 flex flex-wrap gap-1.5">
+                {project.tags.slice(0, 3).map((tag) => (
+                  <span class="rounded-full bg-foreground/5 px-2 py-0.5 text-xs text-foreground/60">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Quick About Section -->
+  <section class="border-t">
+    <div class="mx-auto max-w-4xl px-6 py-16">
+      <div class="flex flex-col gap-8 md:flex-row md:items-center md:gap-16">
+        <div class="shrink-0">
+          <div
+            class="size-24 overflow-hidden rounded-full border-2 border-primary/30"
+          >
+            <img
+              src="https://izzaalfiansyah.my.id/_nuxt/about.O-Ekh4Sx.png"
+              alt="Muhammad Izza Alfiansyah"
+              class="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+        <div class="space-y-3">
+          <h2 class="text-xl font-bold">About Me</h2>
+          <p class="max-w-xl text-foreground/60">
+            Hello! My Name is Muhammad Izza Alfiansyah and you can call me
+            Alfian. I am a Full Stack &amp; Mobile Flutter Developer at ERA
+            Indonesia. I live in Jember Regency, East Java Indonesia. I am very
+            enthusiastic about learning new things in the world of technology.
+          </p>
+          <a href="/about" class="inline-flex text-sm text-primary hover:underline">
+            Read more →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
