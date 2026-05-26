@@ -14,10 +14,12 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^5.0.6",
     "@lucide/astro": "^1.16.0",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.3.7",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
