@@ -5,21 +5,115 @@ interface Path {
 }
 
 const paths: Path[] = [
-  {
-    name: "About",
-    path: "/about",
-  },
-  {
-    name: "Uses",
-    path: "/uses",
-  },
-  {
-    name: "Career",
-    path: "/career",
-  },
-  {
-    name: "Project",
-    path: "/project",
-  },
+  { name: "About", path: "/about" },
+  { name: "Uses", path: "/uses" },
+  { name: "Career", path: "/career" },
+  { name: "Project", path: "/project" },
 ]
+
+const currentPath = Astro.url.pathname
 ---
+
+<nav class="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-sm">
+  <div class="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+    <a
+      href="/"
+      class="text-foreground hover:text-primary font-semibold tracking-tight transition-colors"
+    >
+      izzaalfiansyah
+    </a>
+
+    <div class="flex items-center gap-1">
+      {
+        paths.map((p) => (
+          <a
+            href={p.path}
+            class:list={[
+              "rounded-md px-3 py-1.5 text-sm transition-colors",
+              currentPath.startsWith(p.path)
+                ? "text-primary font-medium"
+                : "text-foreground/60 hover:text-foreground",
+            ]}
+          >
+            {p.name}
+          </a>
+        ))
+      }
+
+      <button
+        id="theme-toggle"
+        aria-label="Toggle theme"
+        class="hover:text-foreground ml-2 cursor-pointer rounded-md p-1.5 text-foreground/60 transition-colors hover:bg-foreground/10"
+      >
+        <svg
+          id="icon-sun"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="hidden"
+        >
+          <circle cx="12" cy="12" r="4"></circle>
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+          ></path>
+        </svg>
+        <svg
+          id="icon-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="hidden"
+        >
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  function updateThemeIcon() {
+    const theme = localStorage.getItem("theme") || "system"
+    const isDark =
+      theme === "dark" ||
+      (theme === "system" &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+
+    const sun = document.getElementById("icon-sun")
+    const moon = document.getElementById("icon-moon")
+
+    if (sun && moon) {
+      sun.classList.toggle("hidden", !isDark)
+      moon.classList.toggle("hidden", isDark)
+    }
+  }
+
+  function setupThemeToggle() {
+    updateThemeIcon()
+
+    const btn = document.getElementById("theme-toggle")
+    btn?.addEventListener("click", () => {
+      const current = localStorage.getItem("theme") || "system"
+      const next = current === "dark" ? "light" : "dark"
+      localStorage.setItem("theme", next)
+
+      document.documentElement.classList.toggle("dark", next === "dark")
+      updateThemeIcon()
+    })
+  }
+
+  setupThemeToggle()
+  document.addEventListener("astro:after-swap", setupThemeToggle)
+</script>
