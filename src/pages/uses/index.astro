@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import { usesCategories } from "@/data/uses"
+import { ExternalLink } from "@lucide/astro"
 ---
 
 <Layout
@@ -57,22 +58,10 @@ import { usesCategories } from "@/data/uses"
                       {item.description}
                     </p>
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                  <ExternalLink
+                    size={14}
                     class="mt-1 shrink-0 text-foreground/30 group-hover:text-foreground/60 transition-colors"
-                  >
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
-                  </svg>
+                  />
                 </div>
               ))}
             </div>

@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import { projects } from "@/data/projects"
+import { ChevronRight } from "@lucide/astro"
 
 const featured = projects.slice(0, 4)
 ---
@@ -44,19 +45,7 @@ const featured = projects.slice(0, 4)
           class="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
         >
           View Projects
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="m9 18 6-6-6-6"></path>
-          </svg>
+          <ChevronRight size={16} />
         </a>
         <a
           href="/contact"
@@ -77,10 +66,7 @@ const featured = projects.slice(0, 4)
           A selection of my recent work
         </p>
       </div>
-      <a
-        href="/project"
-        class="text-sm text-primary hover:underline"
-      >
+      <a href="/project" class="text-sm text-primary hover:underline">
         View all →
       </a>
     </div>
@@ -142,7 +128,10 @@ const featured = projects.slice(0, 4)
             Indonesia. I live in Jember Regency, East Java Indonesia. I am very
             enthusiastic about learning new things in the world of technology.
           </p>
-          <a href="/about" class="inline-flex text-sm text-primary hover:underline">
+          <a
+            href="/about"
+            class="inline-flex text-sm text-primary hover:underline"
+          >
             Read more →
           </a>
         </div>
