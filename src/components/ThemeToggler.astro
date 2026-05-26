@@ -1,0 +1,52 @@
+---
+import { MonitorIcon, SunIcon, MoonIcon } from "@lucide/astro"
+---
+
+<button
+  id="theme-toggle"
+  aria-label="Toggle theme"
+  class="hover:text-foreground ml-2 cursor-pointer rounded-md p-1.5 text-foreground/60 transition-colors hover:bg-foreground/10"
+>
+  <MonitorIcon class="size-4 theme-system hidden" />
+  <SunIcon class="size-4 theme-light hidden" />
+  <MoonIcon class="size-4 theme-dark hidden" />
+</button>
+
+<script>
+  function setupElement() {
+    const btn = document.getElementById("theme-toggle")
+    btn?.addEventListener("click", changeNextTheme)
+  }
+
+  function applyTheme() {
+    const theme = localStorage.getItem("theme") || "system"
+    const isDark =
+      theme === "dark" ||
+      (theme === "system" &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+
+    ;["system", "light", "dark"].forEach((t) => {
+      document
+        .querySelector(`.theme-${t}`)
+        ?.classList.toggle("hidden", theme != t)
+    })
+
+    document.documentElement.classList.toggle("dark", isDark)
+  }
+
+  function changeNextTheme() {
+    const theme = localStorage.getItem("theme") || "system"
+    const next = { system: "light", light: "dark", dark: "system" }[theme]
+
+    localStorage.setItem("theme", next || "system")
+    applyTheme()
+  }
+
+  function init() {
+    applyTheme()
+    setupElement()
+  }
+
+  init()
+  document.addEventListener("astro:after-swap", init)
+</script>
