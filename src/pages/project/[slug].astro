@@ -1,7 +1,12 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import { getCollection, render } from "astro:content"
-import { ChevronLeft, ChevronRight, Github, ExternalLink } from "@lucide/astro"
+import {
+  ChevronLeft,
+  ChevronRight,
+  GitGraph,
+  ExternalLink,
+} from "@lucide/astro"
 import InterestedWithMe from "@/components/InterestedWithMe.astro"
 
 export async function getStaticPaths() {
@@ -129,7 +134,7 @@ const { title, images, tags, links } = entry.data
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:border-foreground/30"
               >
-                <Github size={16} />
+                <GitGraph size={16} />
                 GitHub
               </a>
             )
