@@ -8,18 +8,18 @@ import { ChevronRight } from "@lucide/astro"
   title="Contact"
   meta={{
     description:
-      "Contact Muhammad Izza Alfiansyah - Find me on GitHub, LinkedIn, WhatsApp, and more.",
+      "Then places where you can find me. Find me on GitHub, LinkedIn, WhatsApp, and more.",
   }}
 >
   <div class="mx-auto max-w-4xl px-6 py-16">
     <div class="mb-12">
-      <p class="text-sm font-medium text-primary uppercase tracking-widest mb-2">
+      <p
+        class="text-sm font-medium text-primary uppercase tracking-widest mb-2"
+      >
         Get in touch
       </p>
       <h1 class="text-3xl font-bold tracking-tight md:text-4xl">Contact</h1>
-      <p class="mt-2 text-foreground/60">
-        The places where you can find me
-      </p>
+      <p class="mt-2 text-foreground/60">The places where you can find me</p>
     </div>
 
     <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
@@ -28,7 +28,9 @@ import { ChevronRight } from "@lucide/astro"
           <a
             href={link.url}
             target={link.url.startsWith("mailto") ? undefined : "_blank"}
-            rel={link.url.startsWith("mailto") ? undefined : "noopener noreferrer"}
+            rel={
+              link.url.startsWith("mailto") ? undefined : "noopener noreferrer"
+            }
             class="group flex items-center gap-4 rounded-xl border p-5 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
           >
             <div class="size-10 shrink-0 overflow-hidden rounded-full bg-foreground/5 p-1.5">
@@ -55,7 +57,9 @@ import { ChevronRight } from "@lucide/astro"
     </div>
 
     <!-- Extra CTA -->
-    <div class="mt-16 rounded-2xl border border-primary/20 bg-primary/5 p-8 text-center">
+    <div
+      class="mt-16 rounded-2xl border border-primary/20 bg-primary/5 p-8 text-center"
+    >
       <h3 class="text-xl font-bold">Let's work together</h3>
       <p class="mt-2 text-foreground/60">
         I am open to new opportunities. Feel free to reach out!
