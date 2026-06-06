@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro"
 import { contactLinks } from "@/data/contact"
 import { ChevronRight } from "@lucide/astro"
+import { WHATSAPP_URL, LINKEDIN_URL } from "@/data/constant"
 ---
 
 <Layout
@@ -33,7 +34,7 @@ import { ChevronRight } from "@lucide/astro"
             }
             class="group flex items-center gap-4 rounded-xl border p-5 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
           >
-            <div class="size-10 shrink-0 overflow-hidden rounded-full bg-foreground/5 p-2">
+            <div class="size-10 shrink-0 overflow-hidden rounded-full bg-foreground/5 p-3">
               <link.icon
                 class={`h-full w-full object-contain ${link.url.includes("github") ? "dark:invert-100" : ""}`}
               />
@@ -41,7 +42,10 @@ import { ChevronRight } from "@lucide/astro"
             <div class="flex-1 min-w-0">
               <p class="font-semibold">{link.name}</p>
               <p class="text-xs text-foreground/50 group-hover:text-primary transition-colors truncate">
-                {link.url.replace(/^https?:\/\//, "").replace(/^mailto:/, "")}
+                {link.url
+                  .replace(/^https?:/, "")
+                  .replace(/^mailto:/, "")
+                  .replace("//", "")}
               </p>
             </div>
             <ChevronRight
@@ -63,7 +67,7 @@ import { ChevronRight } from "@lucide/astro"
       </p>
       <div class="mt-4 flex flex-wrap justify-center gap-3">
         <a
-          href="https://api.whatsapp.com/send?phone=6281231921351"
+          href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
@@ -71,7 +75,7 @@ import { ChevronRight } from "@lucide/astro"
           Send Message
         </a>
         <a
-          href="https://www.linkedin.com/in/muhammad-izza-alfiansyah-76a473220"
+          href={LINKEDIN_URL}
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 rounded-lg border px-6 py-2.5 text-sm font-semibold transition-colors hover:border-primary/50 hover:text-primary"
