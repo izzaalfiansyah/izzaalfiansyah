@@ -3,6 +3,8 @@ import Layout from "@/layouts/Layout.astro"
 import { contactLinks } from "@/data/contact"
 import { ChevronRight } from "@lucide/astro"
 import { WHATSAPP_URL, LINKEDIN_URL } from "@/data/constant"
+
+export const inverteds = ["github"]
 ---
 
 <Layout
@@ -36,7 +38,7 @@ import { WHATSAPP_URL, LINKEDIN_URL } from "@/data/constant"
           >
             <div class="size-10 shrink-0 overflow-hidden rounded-full bg-foreground/5 p-3">
               <link.icon
-                class={`h-full w-full object-contain ${link.url.includes("github") ? "dark:invert-100" : ""}`}
+                class={`h-full w-full object-contain ${inverteds.some((inverted) => link.url.includes(inverted)) ? "dark:invert-100" : ""}`}
               />
             </div>
             <div class="flex-1 min-w-0">

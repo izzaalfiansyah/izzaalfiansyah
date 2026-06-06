@@ -4,6 +4,8 @@ import { techstack } from "@/data/techstack"
 import InterestedWithMe from "@/components/InterestedWithMe.astro"
 import AboutImage from "@/assets/images/about.png"
 import { Image } from "astro:assets"
+
+const inverteds = ["rust", "next", "socket", "express", "github"]
 ---
 
 <Layout
@@ -90,11 +92,8 @@ import { Image } from "astro:assets"
           techstack.map((tech) => (
             <div class="group flex flex-col items-center gap-2 rounded-xl border p-4 transition-all hover:border-primary/50 hover:bg-primary/5">
               <div class="size-8 shrink-0">
-                <img
-                  src={tech.icon}
-                  alt={tech.name}
-                  class="h-full w-full object-contain"
-                  loading="lazy"
+                <tech.icon
+                  class={`h-full w-full object-contain ${inverteds.some((inverted) => tech.name.toLowerCase().includes(inverted)) ? "dark:invert-100" : ""}`}
                 />
               </div>
               <span class="text-center text-xs text-foreground/60 group-hover:text-foreground">

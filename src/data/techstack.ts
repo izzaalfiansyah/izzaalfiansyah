@@ -1,113 +1,255 @@
+import Arduino from "@/components/icon/techstack/Arduino.astro"
+import Astro from "@/components/icon/techstack/Astro.astro"
+import Bootstrap from "@/components/icon/techstack/Bootstrap.astro"
+import Css from "@/components/icon/techstack/Css.astro"
+import Docker from "@/components/icon/techstack/Docker.astro"
+import Express from "@/components/icon/techstack/Express.astro"
+import Fastapi from "@/components/icon/techstack/Fastapi.astro"
+import Flutter from "@/components/icon/techstack/Flutter.astro"
+import Git from "@/components/icon/techstack/Git.astro"
+import Github from "@/components/icon/techstack/Github.astro"
+import Gitlab from "@/components/icon/techstack/Gitlab.astro"
+import Go from "@/components/icon/techstack/Go.astro"
+import Graphql from "@/components/icon/techstack/Graphql.astro"
+import Html from "@/components/icon/techstack/Html.astro"
+import Js from "@/components/icon/techstack/Js.astro"
+import Langchain from "@/components/icon/techstack/Langchain.astro"
+import Laravel from "@/components/icon/techstack/Laravel.astro"
+import Llamaindex from "@/components/icon/techstack/Llamaindex.astro"
+import Mongo from "@/components/icon/techstack/Mongo.astro"
+import MySql from "@/components/icon/techstack/MySql.astro"
+import Nest from "@/components/icon/techstack/Nest.astro"
+import Next from "@/components/icon/techstack/Next.astro"
+import Nuxt from "@/components/icon/techstack/Nuxt.astro"
+import Php from "@/components/icon/techstack/Php.astro"
+import Postgree from "@/components/icon/techstack/Postgree.astro"
+import Python from "@/components/icon/techstack/Python.astro"
+import Rabbit from "@/components/icon/techstack/Rabbit.astro"
+import React from "@/components/icon/techstack/React.astro"
+import Redis from "@/components/icon/techstack/Redis.astro"
+import Rust from "@/components/icon/techstack/Rust.astro"
+import Socket from "@/components/icon/techstack/Socket.astro"
+import Solid from "@/components/icon/techstack/Solid.astro"
+import Svelte from "@/components/icon/techstack/Svelte.astro"
+import Tailwind from "@/components/icon/techstack/Tailwind.astro"
+import Ts from "@/components/icon/techstack/Ts.astro"
+import Vue from "@/components/icon/techstack/Vue.astro"
+import type { AIconProps } from "@/components/icon/type"
+
+export type TechCategory =
+  | "language"
+  | "backend"
+  | "frontend"
+  | "database"
+  | "tool"
+  | "frontend"
+  | "mobile"
+  | "devops"
+  | "iot"
+  | "ai"
+  | "ai"
+  | "other"
+
 export interface Tech {
   name: string
-  icon: string
-  category: "frontend" | "backend" | "mobile" | "devops" | "database"
+  icon: (props: AIconProps) => unknown
+  category: TechCategory
 }
 
 export const techstack: Tech[] = [
-  // Frontend
+  // Language
   {
     name: "HTML",
-    icon: "https://cdn-icons-png.flaticon.com/512/1051/1051277.png",
-    category: "frontend",
+    icon: Html,
+    category: "language",
   },
   {
     name: "CSS",
-    icon: "https://cdn-icons-png.flaticon.com/512/732/732190.png",
-    category: "frontend",
+    icon: Css,
+    category: "language",
   },
   {
-    name: "Javascript",
-    icon: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
-    category: "frontend",
+    name: "JavaScript",
+    icon: Js,
+    category: "language",
   },
+  {
+    name: "TypeScript",
+    icon: Ts,
+    category: "language",
+  },
+  {
+    name: "PHP",
+    icon: Php,
+    category: "language",
+  },
+  {
+    name: "Python",
+    icon: Python,
+    category: "language",
+  },
+  {
+    name: "Go",
+    icon: Go,
+    category: "language",
+  },
+  {
+    name: "Rust",
+    icon: Rust,
+    category: "language",
+  },
+
+  // Frontend
   {
     name: "Bootstrap",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1280px-Bootstrap_logo.svg.png",
+    icon: Bootstrap,
     category: "frontend",
   },
   {
     name: "Tailwind",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png",
+    icon: Tailwind,
     category: "frontend",
   },
   {
     name: "React",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+    icon: React,
     category: "frontend",
   },
   {
     name: "Vue",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
+    icon: Vue,
     category: "frontend",
   },
   {
     name: "Svelte",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/1200px-Svelte_Logo.svg.png",
+    icon: Svelte,
+    category: "frontend",
+  },
+  {
+    name: "SolidJS",
+    icon: Solid,
     category: "frontend",
   },
   {
     name: "Nuxt",
-    icon: "https://nuxt.com/assets/design-kit/icon-green.svg",
+    icon: Nuxt,
     category: "frontend",
   },
+  {
+    name: "Next",
+    icon: Next,
+    category: "frontend",
+  },
+  {
+    name: "Astro",
+    icon: Astro,
+    category: "frontend",
+  },
+
   // Backend
   {
-    name: "PHP",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png",
-    category: "backend",
-  },
-  {
-    name: "Go",
-    icon: "https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png",
-    category: "backend",
-  },
-  {
     name: "Laravel",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/985px-Laravel.svg.png",
+    icon: Laravel,
     category: "backend",
   },
   {
     name: "ExpressJS",
-    icon: "https://img.icons8.com/office40/512/express-js.png",
+    icon: Express,
     category: "backend",
   },
   {
     name: "NestJS",
-    icon: "https://nestjs.com/img/logo-small.svg",
+    icon: Nest,
     category: "backend",
   },
-  // Mobile
   {
-    name: "Dart",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png",
-    category: "mobile",
+    name: "FastAPI",
+    icon: Fastapi,
+    category: "backend",
   },
   {
-    name: "Flutter",
-    icon: "https://assets.website-files.com/60d251a34163cf29e1220806/626accd8eefaec54f23310ba_flutter%20developer%20logo.png",
-    category: "mobile",
+    name: "GraphQL",
+    icon: Graphql,
+    category: "backend",
   },
-  // DevOps
   {
-    name: "Docker",
-    icon: "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png",
-    category: "devops",
+    name: "Socket.IO",
+    icon: Socket,
+    category: "backend",
   },
+
   // Database
   {
-    name: "MySql",
-    icon: "https://cdn-icons-png.flaticon.com/512/5968/5968313.png",
+    name: "MySQL",
+    icon: MySql,
+    category: "database",
+  },
+  {
+    name: "PostgreSQL",
+    icon: Postgree,
     category: "database",
   },
   {
     name: "MongoDB",
-    icon: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
+    icon: Mongo,
     category: "database",
   },
   {
-    name: "GraphQL",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/1200px-GraphQL_Logo.svg.png",
+    name: "Redis",
+    icon: Redis,
     category: "database",
+  },
+
+  // Mobile
+  {
+    name: "Flutter",
+    icon: Flutter,
+    category: "mobile",
+  },
+
+  // DevOps
+  {
+    name: "Docker",
+    icon: Docker,
+    category: "devops",
+  },
+  {
+    name: "Git",
+    icon: Git,
+    category: "devops",
+  },
+  {
+    name: "Github",
+    icon: Github,
+    category: "devops",
+  },
+  {
+    name: "Gitlab",
+    icon: Gitlab,
+    category: "devops",
+  },
+
+  // AI
+  {
+    name: "LangChain",
+    icon: Langchain,
+    category: "ai",
+  },
+  {
+    name: "LLamaIndex",
+    icon: Llamaindex,
+    category: "ai",
+  },
+
+  // Tool
+  {
+    name: "RabbitMQ",
+    icon: Rabbit,
+    category: "tool",
+  },
+  {
+    name: "Arduino",
+    icon: Arduino,
+    category: "iot",
   },
 ]
