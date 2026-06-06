@@ -6,6 +6,8 @@ import AboutImage from "@/assets/images/about.png"
 import { Image } from "astro:assets"
 
 const inverteds = ["rust", "next", "socket", "express", "github"]
+
+const categories = ["all", ...Array.from(new Set(techstack.map((t) => t.category)))] as const
 ---
 
 <Layout
@@ -85,12 +87,33 @@ const inverteds = ["rust", "next", "socket", "express", "github"]
         Technologies I work with on a daily basis
       </p>
 
+      <!-- Filter Buttons -->
+      <div class="mb-6 flex flex-wrap gap-2" id="filter-buttons">
+        {categories.map((cat) => (
+          <button
+            data-category={cat}
+            class={`filter-btn capitalize rounded-lg border px-3 py-1.5 text-xs font-medium transition-all ${
+              cat === "all"
+                ? "border-primary bg-primary text-black"
+                : "border-border text-foreground/60 hover:border-primary/50 hover:text-foreground"
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <!-- Tech Stack Grid -->
       <div
         class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6"
+        id="techstack-grid"
       >
         {
           techstack.map((tech) => (
-            <div class="group flex flex-col items-center gap-2 rounded-xl border p-4 transition-all hover:border-primary/50 hover:bg-primary/5">
+            <div
+              class="tech-item group flex flex-col items-center gap-2 rounded-xl border p-4 transition-all hover:border-primary/50 hover:bg-primary/5"
+              data-category={tech.category}
+            >
               <div class="size-8 shrink-0">
                 <tech.icon
                   class={`h-full w-full object-contain ${inverteds.some((inverted) => tech.name.toLowerCase().includes(inverted)) ? "dark:invert-100" : ""}`}
@@ -103,6 +126,33 @@ const inverteds = ["rust", "next", "socket", "express", "github"]
           ))
         }
       </div>
+
+      <script>
+        const buttons = document.querySelectorAll<HTMLButtonElement>(".filter-btn")
+        const items = document.querySelectorAll<HTMLElement>(".tech-item")
+
+        buttons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const selected = btn.dataset.category!
+
+            // Update active button styles
+            buttons.forEach((b) => {
+              const isActive = b.dataset.category === selected
+              b.classList.toggle("border-primary", isActive)
+              b.classList.toggle("bg-primary", isActive)
+              b.classList.toggle("text-black", isActive)
+              b.classList.toggle("border-border", !isActive)
+              b.classList.toggle("text-foreground/60", !isActive)
+            })
+
+            // Show / hide items
+            items.forEach((item) => {
+              const match = selected === "all" || item.dataset.category === selected
+              item.style.display = match ? "" : "none"
+            })
+          })
+        })
+      </script>
     </div>
 
     <InterestedWithMe />

@@ -1,10 +1,13 @@
 import Arduino from "@/components/icon/techstack/Arduino.astro"
 import Astro from "@/components/icon/techstack/Astro.astro"
 import Bootstrap from "@/components/icon/techstack/Bootstrap.astro"
+import Cloudflare from "@/components/icon/techstack/Cloudflare.astro"
 import Css from "@/components/icon/techstack/Css.astro"
+import Dart from "@/components/icon/techstack/Dart.astro"
 import Docker from "@/components/icon/techstack/Docker.astro"
 import Express from "@/components/icon/techstack/Express.astro"
 import Fastapi from "@/components/icon/techstack/Fastapi.astro"
+import Firebase from "@/components/icon/techstack/Firebase.astro"
 import Flutter from "@/components/icon/techstack/Flutter.astro"
 import Git from "@/components/icon/techstack/Git.astro"
 import Github from "@/components/icon/techstack/Github.astro"
@@ -20,19 +23,23 @@ import Mongo from "@/components/icon/techstack/Mongo.astro"
 import MySql from "@/components/icon/techstack/MySql.astro"
 import Nest from "@/components/icon/techstack/Nest.astro"
 import Next from "@/components/icon/techstack/Next.astro"
+import Nginx from "@/components/icon/techstack/Nginx.astro"
 import Nuxt from "@/components/icon/techstack/Nuxt.astro"
 import Php from "@/components/icon/techstack/Php.astro"
 import Postgree from "@/components/icon/techstack/Postgree.astro"
 import Python from "@/components/icon/techstack/Python.astro"
+import Qdrant from "@/components/icon/techstack/Qdrant.astro"
 import Rabbit from "@/components/icon/techstack/Rabbit.astro"
 import React from "@/components/icon/techstack/React.astro"
 import Redis from "@/components/icon/techstack/Redis.astro"
 import Rust from "@/components/icon/techstack/Rust.astro"
+import Sass from "@/components/icon/techstack/Sass.astro"
 import Socket from "@/components/icon/techstack/Socket.astro"
 import Solid from "@/components/icon/techstack/Solid.astro"
 import Svelte from "@/components/icon/techstack/Svelte.astro"
 import Tailwind from "@/components/icon/techstack/Tailwind.astro"
 import Ts from "@/components/icon/techstack/Ts.astro"
+import Vercel from "@/components/icon/techstack/Vercel.astro"
 import Vue from "@/components/icon/techstack/Vue.astro"
 import type { AIconProps } from "@/components/icon/type"
 
@@ -41,7 +48,7 @@ export type TechCategory =
   | "backend"
   | "frontend"
   | "database"
-  | "tool"
+  | "service"
   | "frontend"
   | "mobile"
   | "devops"
@@ -66,6 +73,11 @@ export const techstack: Tech[] = [
   {
     name: "CSS",
     icon: Css,
+    category: "language",
+  },
+  {
+    name: "Sass",
+    icon: Sass,
     category: "language",
   },
   {
@@ -96,6 +108,11 @@ export const techstack: Tech[] = [
   {
     name: "Rust",
     icon: Rust,
+    category: "language",
+  },
+  {
+    name: "Dart",
+    icon: Dart,
     category: "language",
   },
 
@@ -172,11 +189,6 @@ export const techstack: Tech[] = [
     icon: Graphql,
     category: "backend",
   },
-  {
-    name: "Socket.IO",
-    icon: Socket,
-    category: "backend",
-  },
 
   // Database
   {
@@ -197,6 +209,11 @@ export const techstack: Tech[] = [
   {
     name: "Redis",
     icon: Redis,
+    category: "database",
+  },
+  {
+    name: "Qdrant",
+    icon: Qdrant,
     category: "database",
   },
 
@@ -241,12 +258,39 @@ export const techstack: Tech[] = [
     category: "ai",
   },
 
-  // Tool
+  // Service
+  {
+    name: "Nginx",
+    icon: Nginx,
+    category: "service",
+  },
   {
     name: "RabbitMQ",
     icon: Rabbit,
-    category: "tool",
+    category: "service",
   },
+  {
+    name: "Cloudflare",
+    icon: Cloudflare,
+    category: "service",
+  },
+  {
+    name: "Vercel",
+    icon: Vercel,
+    category: "service",
+  },
+  {
+    name: "Socket.IO",
+    icon: Socket,
+    category: "service",
+  },
+  {
+    name: "Firebase",
+    icon: Firebase,
+    category: "service",
+  },
+
+  // IoT
   {
     name: "Arduino",
     icon: Arduino,
