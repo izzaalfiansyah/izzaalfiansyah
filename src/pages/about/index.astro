@@ -2,6 +2,8 @@
 import Layout from "@/layouts/Layout.astro"
 import { techstack } from "@/data/techstack"
 import InterestedWithMe from "@/components/InterestedWithMe.astro"
+import AboutImage from "@/assets/images/about.png"
+import { Image } from "astro:assets"
 ---
 
 <Layout
@@ -18,8 +20,8 @@ import InterestedWithMe from "@/components/InterestedWithMe.astro"
         <div
           class="size-36 overflow-hidden rounded-2xl border-2 border-primary/20 md:size-48"
         >
-          <img
-            src="https://izzaalfiansyah.my.id/_nuxt/about.O-Ekh4Sx.png"
+          <Image
+            src={AboutImage}
             alt="Muhammad Izza Alfiansyah"
             class="h-full w-full object-cover"
           />

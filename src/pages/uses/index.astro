@@ -1,6 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import { usesCategories } from "@/data/uses"
+import { Image } from "astro:assets"
+import DesktopImage from "@/assets/images/uses/desktop.png"
 ---
 
 <Layout
@@ -26,8 +28,8 @@ import { usesCategories } from "@/data/uses"
 
     <!-- Desktop illustration -->
     <div class="mb-12 overflow-hidden rounded-2xl border bg-foreground/5">
-      <img
-        src="https://izzaalfiansyah.my.id/_nuxt/desktop.tt8b0Lr9.png"
+      <Image
+        src={DesktopImage}
         alt="My desktop setup"
         class="w-full object-cover"
         loading="lazy"
