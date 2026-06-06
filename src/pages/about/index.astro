@@ -5,9 +5,12 @@ import InterestedWithMe from "@/components/InterestedWithMe.astro"
 import AboutImage from "@/assets/images/about.png"
 import { Image } from "astro:assets"
 
-const inverteds = ["rust", "next", "socket", "express", "github"]
+const inverteds = ["rust", "next", "socket", "express", "github", "vercel"]
 
-const categories = ["all", ...Array.from(new Set(techstack.map((t) => t.category)))] as const
+const categories = [
+  "all",
+  ...Array.from(new Set(techstack.map((t) => t.category))),
+] as const
 ---
 
 <Layout
@@ -89,18 +92,20 @@ const categories = ["all", ...Array.from(new Set(techstack.map((t) => t.category
 
       <!-- Filter Buttons -->
       <div class="mb-6 flex flex-wrap gap-2" id="filter-buttons">
-        {categories.map((cat) => (
-          <button
-            data-category={cat}
-            class={`filter-btn capitalize rounded-lg border px-3 py-1.5 text-xs font-medium transition-all ${
-              cat === "all"
-                ? "border-primary bg-primary text-black"
-                : "border-border text-foreground/60 hover:border-primary/50 hover:text-foreground"
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
+        {
+          categories.map((cat) => (
+            <button
+              data-category={cat}
+              class={`filter-btn capitalize rounded-lg border px-3 py-1.5 text-xs font-medium transition-all ${
+                cat === "all"
+                  ? "border-primary bg-primary text-black"
+                  : "border-border text-foreground/60 hover:border-primary/50 hover:text-foreground"
+              }`}
+            >
+              {cat}
+            </button>
+          ))
+        }
       </div>
 
       <!-- Tech Stack Grid -->
@@ -128,7 +133,8 @@ const categories = ["all", ...Array.from(new Set(techstack.map((t) => t.category
       </div>
 
       <script>
-        const buttons = document.querySelectorAll<HTMLButtonElement>(".filter-btn")
+        const buttons =
+          document.querySelectorAll<HTMLButtonElement>(".filter-btn")
         const items = document.querySelectorAll<HTMLElement>(".tech-item")
 
         buttons.forEach((btn) => {
@@ -147,7 +153,8 @@ const categories = ["all", ...Array.from(new Set(techstack.map((t) => t.category
 
             // Show / hide items
             items.forEach((item) => {
-              const match = selected === "all" || item.dataset.category === selected
+              const match =
+                selected === "all" || item.dataset.category === selected
               item.style.display = match ? "" : "none"
             })
           })

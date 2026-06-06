@@ -5,6 +5,7 @@ import Cloudflare from "@/components/icon/techstack/Cloudflare.astro"
 import Css from "@/components/icon/techstack/Css.astro"
 import Dart from "@/components/icon/techstack/Dart.astro"
 import Docker from "@/components/icon/techstack/Docker.astro"
+import Elysia from "@/components/icon/techstack/Elysia.astro"
 import Express from "@/components/icon/techstack/Express.astro"
 import Fastapi from "@/components/icon/techstack/Fastapi.astro"
 import Firebase from "@/components/icon/techstack/Firebase.astro"
@@ -177,6 +178,11 @@ export const techstack: Tech[] = [
   {
     name: "NestJS",
     icon: Nest,
+    category: "backend",
+  },
+  {
+    name: "ElysiaJS",
+    icon: Elysia,
     category: "backend",
   },
   {
