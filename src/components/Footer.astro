@@ -1,15 +1,13 @@
 ---
+import { USER_FULLNAME } from "@/data/constant"
 ---
 
 <footer class="border-t py-8">
   <div class="mx-auto max-w-4xl px-6 text-center">
     <p class="text-foreground/50 text-sm">
       Copyright &copy;{" "}
-      <a
-        href="/"
-        class="hover:text-primary transition-colors"
-      >
-        Muhammad Izza Alfiansyah
+      <a href="/" class="hover:text-primary transition-colors">
+        {USER_FULLNAME}
       </a>{" "}
       {new Date().getFullYear()}
     </p>

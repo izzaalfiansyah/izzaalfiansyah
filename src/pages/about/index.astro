@@ -4,7 +4,13 @@ import { techstack } from "@/data/techstack"
 import InterestedWithMe from "@/components/InterestedWithMe.astro"
 import AboutImage from "@/assets/images/about.png"
 import { Image } from "astro:assets"
-
+import {
+  USER_CALLNAME,
+  USER_FULLNAME,
+  USER_CURRENT_POSITION,
+  USER_CURRENT_COMPANY,
+  USER_JOB,
+} from "@/data/constant"
 const inverteds = ["rust", "next", "socket", "express", "github", "vercel"]
 
 const categories = [
@@ -16,8 +22,7 @@ const categories = [
 <Layout
   title="About Me"
   meta={{
-    description:
-      "My Name is Muhammad Izza Alfiansyah. I'm a Full Stack & Mobile Flutter Developer based in Jember, East Java, Indonesia.",
+    description: `My Name is ${USER_FULLNAME}. I'm a Full Stack & Mobile Flutter Developer based in Jember, East Java, Indonesia.`,
   }}
 >
   <div class="mx-auto max-w-4xl px-6 py-16">
@@ -29,7 +34,7 @@ const categories = [
         >
           <Image
             src={AboutImage}
-            alt="Muhammad Izza Alfiansyah"
+            alt={USER_FULLNAME}
             class="h-full w-full object-cover"
           />
         </div>
@@ -43,20 +48,21 @@ const categories = [
             About Me
           </p>
           <h1 class="text-3xl font-bold tracking-tight md:text-4xl">
-            Muhammad Izza Alfiansyah
+            {USER_FULLNAME}
           </h1>
           <p class="mt-1 text-foreground/60">
-            Full Stack &amp; Mobile Flutter Developer
+            {USER_JOB}
           </p>
         </div>
 
         <div class="space-y-3 text-foreground/70 leading-relaxed">
           <p>
-            Hello! My Name is Muhammad Izza Alfiansyah and you can call me
-            <strong class="text-foreground">Alfian</strong>. I am a Full Stack
-            &amp; Mobile Flutter Developer at{" "}
-            <strong class="text-foreground">ERA Indonesia</strong>. I Live in
-            Jember Regency, East Java Indonesia.
+            Hello! My Name is {USER_FULLNAME} and you can call me
+            <strong class="text-foreground">{USER_CALLNAME}</strong>. I am a {
+              USER_CURRENT_POSITION
+            } at{" "}
+            <strong class="text-foreground">{USER_CURRENT_COMPANY}</strong>. I
+            Live in Jember Regency, East Java Indonesia.
           </p>
           <p>
             I started programming when I was in high school at{" "}

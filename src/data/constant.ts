@@ -1,3 +1,9 @@
+export const USER_FULLNAME = "Muhammad Izza Alfiansyah"
+export const USER_CALLNAME = "Alfian"
+export const USER_JOB = "Software Engineer"
+export const USER_CURRENT_POSITION = "Full Stack & Mobile Flutter Developer"
+export const USER_CURRENT_COMPANY = "ERA Indonesia"
+
 export const GITHUB_URL = "https://github.com/izzaalfiansyah"
 export const LINKEDIN_URL =
   "https://www.linkedin.com/in/muhammad-izza-alfiansyah-76a473220"
