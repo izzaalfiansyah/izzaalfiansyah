@@ -23,7 +23,7 @@ const { title, images, tags, links } = entry.data
 ---
 
 <Layout
-  title={title}
+  title={`${title} - Project`}
   meta={{
     description: entry.body?.replace(/\n/g, " ").slice(0, 160) || "",
   }}
@@ -51,7 +51,7 @@ const { title, images, tags, links } = entry.data
           style="will-change: transform;"
         >
           {
-            images.map((src, i) => (
+            images.map((src: string, i: number) => (
               <div class="min-w-full">
                 <img
                   src={src}
@@ -93,7 +93,7 @@ const { title, images, tags, links } = entry.data
               id="carousel-dots"
               class="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5"
             >
-              {images.map((_, i) => (
+              {images.map((_: string, i: any) => (
                 <button
                   data-index={i}
                   aria-label={`Go to image ${i + 1}`}
@@ -158,7 +158,7 @@ const { title, images, tags, links } = entry.data
       <!-- Tags -->
       <div class="flex flex-wrap gap-2">
         {
-          tags.map((tag) => (
+          tags.map((tag: string) => (
             <span class="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
               {tag}
             </span>
